@@ -1,0 +1,26 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 50px 50px;
+
+}
+
+.website-header {
+  display: flex;
+  background-color: black;
+  text-align: justify;
+}
+
+.website-header-text {
+  color: white;
+}
+
+.sansserif {
+  font-family: Verdana, Helvetica, sans-serif;
+}
