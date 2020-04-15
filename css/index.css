@@ -11,6 +11,10 @@
 
 }
 
+.grid-item:hover{
+  transform: scale(1.25);
+}
+
 .website-header {
   display: flex;
   background-color: black;
