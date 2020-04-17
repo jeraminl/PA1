@@ -16,11 +16,11 @@
 
 }
 
-.grid-item:hover{
+.grid-item:hover {
   transform: scale(1.25);
 }
 
-.website-header {
+/* .website-header {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -30,7 +30,7 @@
   color: white;
   font-size: xx-large;
   padding: 25px 0px 25px 50px;
-}
+} */
 
 
 .sansserif {
