@@ -8,6 +8,23 @@
   <link rel="stylesheet" type="text/css" href="css/header.css">
 </head>
 
+<script>
+  function orderConfirmation(){
+    if (window.confirm('Click on to confirm your order!')) 
+    {
+      var yourFirstName = document.getElementById("firstName").value;
+      var yourLastName = document.getElementById("lastName").value;
+      var yourEmail = document.getElementById("email").value;
+      var yourAddress = document.getElementById("address").value;
+      var yourCity = document.getElementById("city").value;
+      var yourState = document.getElementById("state").value;
+      var yourZip = document.getElementById("zip").value;
+      var orderNumber = Math.floor(Math.random() * 100000) + 1;
+      window.location.href="mailto:"+encodeURIComponent(yourEmail)+"?subject=Order%20Confirmation%20#"+encodeURIComponent(orderNumber)+"&body=Order%20Details%0d%0aName: "+encodeURIComponent(yourFirstName)+"%20"+encodeURIComponent(yourLastName)+"%0d%0aEmail Address: "+encodeURIComponent(yourEmail)+"%0d%0aAddress: "+encodeURIComponent(yourAddress)+"%0d%0aCity: "+encodeURIComponent(yourCity)+"%0d%0aState: "+encodeURIComponent(yourState)+"%0d%0aZip: "+encodeURIComponent(yourZip);
+    };
+  }
+  </script>
+
 <body>
   <div class="flex-container sansserif">
     <div class="website-header">
@@ -56,12 +73,12 @@
         <label for="city">City:</label><br>
         <input type="text" id="city" name="city"><br><br>
 
-        <label for="state">State:</label>
+        <label for="state">State:</label><br>
+        <input type="text" id="state" name="state"><br><br>
         <label for="zip">Zip Code:</label><br>
-        <input type="text" id="state" name="state">
-        <input type="text" id="zip" name="zip"><br><br>
+        <input type="text" id="zip" name="zip" maxlength="5" size="5"><br><br>
 
-        <input type=button value="Place Order">
+        <button type="button" class="block" onclick="orderConfirmation()">Place Order!</button>
       </div>
     </form>
 
