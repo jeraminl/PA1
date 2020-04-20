@@ -8,8 +8,68 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  /* border-style: ridge; */
 }
 
 .sansserif {
   font-family: Verdana, Helvetica, sans-serif;
+}
+
+.prod-title {
+  margin-left: 50px;
+  /* border-style: ridge; */
+}
+
+.prod-details {
+  font-family: Verdana, Helvetica, sans-serif;
+}
+
+.prod-img {
+  height: auto;
+  width: auto;
+  max-height: 750px;
+  max-width: 750px;
+  float: left;
+  margin-right: auto;
+  margin-left: 50px;
+  padding-right: 10px;
+  margin-bottom: 25px;
+}
+
+.list-items {
+  list-style-type: none;
+  text-indent: 25px;
+}
+
+.order-form {
+  border-style: groove;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 30px;
+  border-radius: 5px;
+}
+
+.product {
+  border-style: ridge;
+  border-radius: 5px;
+}
+
+.image-wheel {
+  /* border-style: ridge; */
+}
+
+input[type=text],
+input[type=email] {
+  border-radius: 5px;
+  width: 25%;
+  padding: 5px;
+  font-size: 15px;
+}
+
+input[type=button] {
+  /* align-items: center; */
+  justify-content: center;
+  font-size: 100px;
+  padding: 5px;
 }
