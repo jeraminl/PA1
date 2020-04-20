@@ -8,6 +8,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: black;
   /* border-style: ridge; */
 }
 
@@ -63,11 +64,18 @@
   margin-right: 50px;
   padding-bottom: 30px;
   border-radius: 5px;
+  border-color: #696969;
+  background-color: #696969;
+  margin-bottom: 50px;
 }
 
 .product {
   border-style: ridge;
   border-radius: 5px;
+  background-color: #696969;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-color: #696969;
 }
 
 .image-wheel {
