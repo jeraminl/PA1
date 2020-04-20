@@ -36,8 +36,17 @@
 }
 
 .column-2 {
-  float: 50%;
+  flex: 100%;
   width: 100%;
+  position: relative;
+  right: -40px;
+}
+
+.column-3 {
+  flex: 100%;
+  width: 100%;
+  position: relative;
+  left: -40px;
 }
 
 .prod-img {
