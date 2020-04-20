@@ -8,12 +8,29 @@
   <link rel="stylesheet" type="text/css" href="css/header.css">
 </head>
 
+<script>
+  function orderConfirmation(){
+    if (window.confirm('Click on to confirm your order!'))
+    {
+      var yourFirstName = document.getElementById("firstName").value;
+      var yourLastName = document.getElementById("lastName").value;
+      var yourEmail = document.getElementById("email").value;
+      var yourAddress = document.getElementById("address").value;
+      var yourCity = document.getElementById("city").value;
+      var yourState = document.getElementById("state").value;
+      var yourZip = document.getElementById("zip").value;
+      var orderNumber = Math.floor(Math.random() * 100000) + 1;
+      window.location.href="mailto:"+encodeURIComponent(yourEmail)+"?subject=Order%20Confirmation%20#"+encodeURIComponent(orderNumber)+"&body=Order%20Details%0d%0aName: "+encodeURIComponent(yourFirstName)+"%20"+encodeURIComponent(yourLastName)+"%0d%0aEmail Address: "+encodeURIComponent(yourEmail)+"%0d%0aAddress: "+encodeURIComponent(yourAddress)+"%0d%0aCity: "+encodeURIComponent(yourCity)+"%0d%0aState: "+encodeURIComponent(yourState)+"%0d%0aZip: "+encodeURIComponent(yourZip);
+    };
+  }
+  </script>
+
 <body>
   <div class="flex-container sansserif">
     <div class="website-header">
       <ul>
-        <li class="logo"><img src="icon.png" alt="Hobbyt Logo"></li>
-        <li class="header-text">Keyboard Store</li>
+        <li class="header-image"><img src="blank keyboard.png" alt="Hobby Logo" height="auto" width="400"></li>
+        <li class="header-text" style="sansserif" >KEYBOARD<br>STORE</li>
       </ul>
     </div>
 
@@ -25,6 +42,7 @@
         <img class="prod-img" src="test keyboard.png" alt="test keyboard img">
       </div>
 
+      <!-- Text Beside Image -->
       <p>Product ID: </p>
       <p>Brand</p>
       <p class="prod-details">Descriptions</p>
