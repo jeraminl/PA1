@@ -3,7 +3,7 @@
     "0": {
       "name": "Dell Wired Keyboard KB216",
       "description": "Basic Dell keyboard for office or personal settings.",
-      "imgPaths" : [],
+      "imgPaths": ["img/0/0.jpg", "img/0/1.jpg", "img/0/2.jpg"],
       "size": "Full",
       "price": 23,
       "switch": "Membrane"
@@ -12,7 +12,7 @@
     "1": {
       "name": "Dell Wireless Keyboard and Mouse KM636",
       "description": "Contemporary wireless keyboard and mouse for office and personal environments.",
-      "imgPaths" : [],
+      "imgPaths": ["img/1/0.jpg", "img/1/1.jpg", "img/1/2.jpg"],
       "size": "Full",
       "price": 33.94,
       "switch": "Membrane"
@@ -20,7 +20,7 @@
     "2": {
       "name": "Redragon K502 RGB Membrane Gaming Keyboard",
       "description": "An RGB keyboard with membrane switches for all casual gamers.",
-      "imgPaths" : [],
+      "imgPaths": ["img/2/0.jpg", "img/2/1.jpg", "img/2/2.jpg"],
       "size": "Full",
       "price": 26.99,
       "switch": "Membrane"
@@ -28,7 +28,7 @@
     "3": {
       "name": "Razer Cysnosa RGB Gaming Keyboard",
       "description": "#1 Best-Selling membrane RGB keyboard for all gamers.",
-      "imgPaths" : [],
+      "imgPaths": ["img/3/0.jpg", "img/3/1.jpg", "img/3/2.jpg"],
       "size": "Full",
       "price": 44.99,
       "switch": "Membrane"
@@ -36,7 +36,7 @@
     "4": {
       "name": "Redragon K551 Mechanical Gaming Keyboard",
       "description": "Red back-lit mechanical keyboard with Cherry MX Blue equivalent switches.",
-      "imgPaths" : [],
+      "imgPaths": ["img/4/0.jpg", "img/4/1.jpg", "img/4/2.jpg"],
       "size": "Full",
       "price": 43.99,
       "switch": "Cherry MX Blue Equivalent"
@@ -44,7 +44,7 @@
     "5": {
       "name": "Redragon K552 60% Mechanical Gaming Keyboard",
       "description": "Red back-lit 60% mechanical keyboard with Cherry MX Blue equivalent switches.",
-      "imgPaths" : [],
+      "imgPaths": ["img/5/0.jpg", "img/5/1.jpg", "img/5/2.jpg"],
       "size": "TKL: Tenkeyless",
       "price": 36.99,
       "switch": ""
@@ -52,7 +52,7 @@
     "6": {
       "name": "Redragon S101 Wired Gaming Keyboard and Mouse",
       "description": "An RGB gaming keyboard and mouse combo for all gamers.",
-      "imgPaths" : [],
+      "imgPaths": ["img/6/0.jpg", "img/6/1.jpg", "img/6/2.jpg"],
       "size": "Full",
       "price": 39.98,
       "switch": "Membrane"
@@ -60,7 +60,7 @@
     "7": {
       "name": "HyperX Alloy Pro-Tenkeyless Mechanical Keyboard",
       "description": "Minimalistic TKL gaming keyboard with a steel frame.",
-      "imgPaths" : [],
+      "imgPaths": ["img/7/0.jpg", "img/7/1.jpg", "img/7/2.jpg"],
       "size": "TKL: Tenkeyless",
       "price": 56.99,
       "switch": "Cherry MX Blue"
@@ -68,7 +68,7 @@
     "8": {
       "name": "Cooler Master MK730 TKL Mechanical Keyboard",
       "description": "Metal framed TKL Cherry MX Brown keyboard and wrist rest.",
-      "imgPaths" : [],
+      "imgPaths": ["img/8/0.jpg", "img/8/1.jpg", "img/8/2.jpg"],
       "size": "TKL: Tenkeyless",
       "price": 111.99,
       "switch": "Cherry MX Brown"
@@ -76,7 +76,7 @@
     "9": {
       "name": "Corsair K70 RGB Mechanical Gaming Keyboard",
       "description": "A full mechanical gaming keyboard for gaming and productivity.",
-      "imgPaths" : [],
+      "imgPaths": ["img/9/0.jpg", "img/9/1.jpg", "img/9/2.jpg"],
       "size": "Full",
       "price": 119.99,
       "switch": "Cherry MX Speed"
@@ -84,7 +84,7 @@
     "10": {
       "name": "DAS Keyboard 4 Professional",
       "description": "Cherry MX Blue professional mechanical keyboard for Windows and Mac.",
-      "imgPaths" : [],
+      "imgPaths": ["img/10/0.jpg", "img/10/1.jpg", "img/10/2.jpg"],
       "size": "Full",
       "price": 169.00,
       "switch": "Cherry MX Blue"
@@ -92,7 +92,7 @@
     "11": {
       "name": "HELLO GANSS Full Mechanical Keyboard",
       "description": "A keyboard best fit for gamers and professionals alike.",
-      "imgPaths" : [],
+      "imgPaths": ["img/11/0.jpg", "img/11/1.jpg", "img/11/2.jpg"],
       "size": "Full",
       "price": 99.99,
       "switch": "Cherry MX Brown"
@@ -100,7 +100,7 @@
     "12": {
       "name": "HyperX Alloy Elite Mechanical Keyboard",
       "description": "Customize your RGB keyboard with this mechnical keyboard for elite gamers.",
-      "imgPaths" : [],
+      "imgPaths": ["img/12/0.jpg", "img/12/1.jpg", "img/12/2.jpg"],
       "size": "Full",
       "price": 99.99,
       "switch": "Cherry MX Brown"
@@ -108,7 +108,7 @@
     "13": {
       "name": "HELLO GANSS Mini Mechanical Keyboard",
       "description": "A 60% mechanical keyboard for all professionals.",
-      "imgPaths" : [],
+      "imgPaths": ["img/13/0.jpg", "img/13/1.jpg", "img/13/2.jpg"],
       "size": "",
       "price": 69.99,
       "switch": "Cherry MX Blue"
@@ -116,7 +116,7 @@
     "14": {
       "name": "Logitech G610 Orion Backlit Mechanical Keyboard",
       "description": "A white back-lit LED keyboard.",
-      "imgPaths" : [],
+      "imgPaths": ["img/14/0.jpg", "img/14/1.jpg", "img/14/2.jpg"],
       "size": "Full",
       "price": 82.45,
       "switch": "Cherry MX Red"
