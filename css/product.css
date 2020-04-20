@@ -94,13 +94,21 @@ select {
   justify-content: center;
 }
 
-.header-image{
+span.price {
+  float: right;
+}
+
+cart {
+  float: left;
+}
+
+.header-image {
   position: relative;
   text-align: center;
   color: black;
 }
 
-.header-text{
+.header-text {
   display: flex;
   justify-content: center;
   flex-direction: column;
