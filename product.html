@@ -18,14 +18,54 @@
     </div>
 
     <div class="product">
-      <div class="prod-img">
-        <!-- INSERT IMAGE HERE -->
+      <h1 class="prod-title"> Product Name </h1>
+
+      <!-- Need to figure out how to make an image carousel -->
+      <div class="image-wheel">
+        <img class="prod-img" src="test keyboard.png" alt="test keyboard img">
       </div>
 
-      <div class="prod-details">
-        <!-- INTERT DETAILS HERE -->
-      </div>
+      <!-- Text Beside Image -->
+      <p>Product ID: </p>
+      <p>Brand</p>
+      <p class="prod-details">Descriptions</p>
+      <p class="price">Price: $</p>
+      <ul> Additional Details
+        <li class="list-items">Size: </li>
+        <li class="list-items">Keys: </li>
+      </ul>
     </div>
+
+    <!-- Order Form -->
+    <form class="order-form">
+      <div>
+        <h2>Order Form</h2>
+
+        <label for="firstName">First Name</label><br>
+        <input type="text" id="firstName" name="firstName"><br><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName"><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br><br>
+
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city"><br><br>
+
+        <label for="state">State:</label>
+        <label for="zip">Zip Code:</label><br>
+        <input type="text" id="state" name="state">
+        <input type="text" id="zip" name="zip"><br><br>
+
+        <input type=button value="Place Order">
+      </div>
+    </form>
+
+  </div>
 
   </div>
 </body>

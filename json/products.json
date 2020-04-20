@@ -1,0 +1,25 @@
+{
+  "id": {
+    "0": {
+      "name": "razor",
+      "description": "keyboard 1",
+      "imgPaths" : [],
+      "availableColors": [],
+      "price": 25
+    },
+    "1": {
+      "name": "corsair",
+      "description": "keyboard 2",
+      "imgPaths" : [],
+      "availableColors": [],
+      "price": 25
+    },
+    "2": {
+      "name": "massdrop",
+      "description": "keyboard 3",
+      "imgPaths" : [],
+      "availableColors": [],
+      "price": 25
+    }
+  }
+}

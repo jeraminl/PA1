@@ -20,6 +20,7 @@
   transform: scale(1.25);
 }
 
+<<<<<<< HEAD
 /* .website-header {
   display: flex;
   flex-direction: row;
@@ -55,5 +56,8 @@
 
 
 .sansserif{
+=======
+.sansserif {
+>>>>>>> 4e219b7e24969178f2fbf356b108758c1b4d7ed4
   font-family: Verdana, Helvetica, sans-serif;
 }
