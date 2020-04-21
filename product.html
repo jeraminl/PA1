@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/header.css">
   <script>
     function orderConfirmation() {
-      if (window.confirm('Click on to confirm your order!')) {
+      if (window.confirm('Click "OK" to confirm your order!')) {
         var yourFirstName = document.getElementById("firstName").value;
         var yourLastName = document.getElementById("lastName").value;
         var yourEmail = document.getElementById("email").value;
@@ -57,7 +57,7 @@
 
     <!-- Order Form -->
     <form class="order-form">
-      <h2>Order Form</h2>
+      <h2 class="prod-title">Order Form</h2>
       <div class="row">
         <div class="column">
           <h3>Personal and Shipping Information</h3>
@@ -262,7 +262,7 @@
 
         </div>
 
-        <div class="column">
+        <div class="column-4">
           <div>
             <h3>Cart</h3>
             <p class="cart">Product ID: </p>
@@ -282,7 +282,7 @@
             </select><br><br>
             <p>Shipping: </p> <br><br>
             <p>Total Price: </p> <br> <br>
-            <input type="button" value="Submit Order">
+            <button onclick="orderConfirmation()">Submit Order</button>
           </div>
         </div>
       </div>
