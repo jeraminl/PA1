@@ -22,19 +22,10 @@ function load() {
         if (data.id[i].category == "Office") {
           var img = document.createElement("img");
           img.setAttribute("src", "img/" + i + "/0.jpg");
-          img.setAttribute("style", "max-width: 100%; " + "height: auto;");
+          img.setAttribute("class", "photo");
 
           var imgCell = document.createElement("div");
-          imgCell.setAttribute(
-            "style",
-            "width: 400px; " +
-              "height: 400px" +
-              "align-items: center;" +
-              "color: white;" +
-              "background-size: 100% 100%;" +
-              "max-width: 400px;" +
-              "background-attachment: fixed;"
-          );
+          imgCell.setAttribute("class", "grid-img");
 
           imgCell.appendChild(img);
 
@@ -44,34 +35,25 @@ function load() {
           var link = document.createElement("a");
           link.setAttribute("href", "product.html?Id=" + i);
           link.setAttribute("name", JSON.stringify(data.id[i].name));
-          link.setAttribute("style", "color:white; text-decoration: none;");
+          link.setAttribute("style", "color:black; text-decoration: none;");
           link.appendChild(
             document.createTextNode(data.id[i].name.toUpperCase())
           );
           link.appendChild(imgCell);
+          link.appendChild(p);
 
           var cell = document.createElement("div");
           cell.setAttribute("class", "grid-item");
           cell.appendChild(link);
-          cell.appendChild(p);
 
           document.getElementById("productListOffice").appendChild(cell);
         } else if (data.id[i].category == "Gaming") {
           var img = document.createElement("img");
           img.setAttribute("src", "img/" + i + "/0.jpg");
-          img.setAttribute("style", "max-width: 100%; " + "height: auto;");
+          img.setAttribute("class", "photo");
 
           var imgCell = document.createElement("div");
-          imgCell.setAttribute(
-            "style",
-            "width: 400px; " +
-              "height: 400px" +
-              "align-items: center;" +
-              "color: white;" +
-              "background-size: 100% 100%;" +
-              "max-width: 400px;" +
-              "background-attachment: fixed;"
-          );
+          imgCell.setAttribute("class", "grid-img");
 
           imgCell.appendChild(img);
 
@@ -81,34 +63,25 @@ function load() {
           var link = document.createElement("a");
           link.setAttribute("href", "product.html?Id=" + i);
           link.setAttribute("name", JSON.stringify(data.id[i].name));
-          link.setAttribute("style", "color:white; text-decoration: none;");
+          link.setAttribute("style", "color:black; text-decoration: none;");
           link.appendChild(
             document.createTextNode(data.id[i].name.toUpperCase())
           );
           link.appendChild(imgCell);
+          link.appendChild(p);
 
           var cell = document.createElement("div");
           cell.setAttribute("class", "grid-item");
           cell.appendChild(link);
-          cell.appendChild(p);
 
           document.getElementById("productListGaming").appendChild(cell);
         } else if (data.id[i].category == "Professional") {
           var img = document.createElement("img");
           img.setAttribute("src", "img/" + i + "/0.jpg");
-          img.setAttribute("style", "max-width: 100%; " + "height: auto;");
+          img.setAttribute("class", "photo");
 
           var imgCell = document.createElement("div");
-          imgCell.setAttribute(
-            "style",
-            "width: 400px; " +
-              "height: 400px" +
-              "align-items: center;" +
-              "color: white;" +
-              "background-size: 100% 100%;" +
-              "max-width: 400px;" +
-              "background-attachment: fixed;"
-          );
+          imgCell.setAttribute("class", "grid-img");
 
           imgCell.appendChild(img);
 
@@ -118,16 +91,16 @@ function load() {
           var link = document.createElement("a");
           link.setAttribute("href", "product.html?Id=" + i);
           link.setAttribute("name", JSON.stringify(data.id[i].name));
-          link.setAttribute("style", "color:white; text-decoration: none;");
+          link.setAttribute("style", "color:black; text-decoration: none;");
           link.appendChild(
             document.createTextNode(data.id[i].name.toUpperCase())
           );
           link.appendChild(imgCell);
+          link.appendChild(p);
 
           var cell = document.createElement("div");
           cell.setAttribute("class", "grid-item");
           cell.appendChild(link);
-          cell.appendChild(p);
 
           document.getElementById("productListProfessional").appendChild(cell);
         }
