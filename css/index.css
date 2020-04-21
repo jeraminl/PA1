@@ -13,7 +13,6 @@
   grid-template-columns: auto auto auto;
   grid-gap: 25px 25px;
   background-color: #696969;
-
 }
 
 .grid-item:hover {
@@ -41,7 +40,7 @@
   font-style: italic;
 }
 
-.about-us{
+.about-us {
   color: white;
   font-size: xx-large;
 }
