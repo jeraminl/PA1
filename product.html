@@ -53,20 +53,22 @@
         var units = document.getElementById("units");
         var newUnits = units.options[units.selectedIndex].value;
 
-        document.getElementById("orderTotPrice").innerHTML =
-          parseInt(document.getElementById("orderPrice").innerHTML) *
-            parseInt(newUnits) +
-          parseInt(document.getElementById("shipPrice").innerHTML);
+        document.getElementById("orderTotPrice").innerHTML = (
+          parseFloat(document.getElementById("orderPrice").innerHTML) *
+            parseFloat(newUnits) +
+          parseFloat(document.getElementById("shipPrice").innerHTML)
+        ).toFixed(2);
       }
 
       function difUnits() {
         var oldUnits = document.getElementById("units");
         var newUnits = oldUnits.options[oldUnits.selectedIndex].value;
 
-        document.getElementById("orderTotPrice").innerHTML =
-          parseInt(document.getElementById("orderPrice").innerHTML) *
-            parseInt(newUnits) +
-          parseInt(document.getElementById("shipPrice").innerHTML);
+        document.getElementById("orderTotPrice").innerHTML = (
+          parseFloat(document.getElementById("orderPrice").innerHTML) *
+            parseFloat(newUnits) +
+          parseFloat(document.getElementById("shipPrice").innerHTML)
+        ).toFixed(2);
       }
     </script>
 
