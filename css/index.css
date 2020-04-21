@@ -20,23 +20,23 @@
   transform: scale(1.25);
 }
 
-.header-image{
+.header-image {
   position: relative;
-  text-align: center;
+  right: 230px;
   color: black;
 }
 
-.header-text{
+.header-text {
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
   position: absolute;
-  top: 18%;
-  left: 51%;
+  top: 19%;
+  left: 62%;
   transform: translate(-50%, -50%);
   font-size: 70px;
-  color: rgb(0, 0, 0);
+  color: white;
   font-family: fantasy;
   font-style: italic;
 }
