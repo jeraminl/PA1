@@ -12,37 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/product.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css" />
     <script>
-      function orderConfirmation() {
-        if (window.confirm('Click "OK" to confirm your order!')) {
-          var yourFirstName = document.getElementById("firstName").value;
-          var yourLastName = document.getElementById("lastName").value;
-          var yourEmail = document.getElementById("email").value;
-          var yourAddress = document.getElementById("address").value;
-          var yourCity = document.getElementById("city").value;
-          var yourState = document.getElementById("state").value;
-          var yourZip = document.getElementById("zip").value;
-          var orderNumber = Math.floor(Math.random() * 100000) + 1;
-          window.location.href =
-            "mailto:" +
-            encodeURIComponent(yourEmail) +
-            "?subject=Order%20Confirmation%20#" +
-            encodeURIComponent(orderNumber) +
-            "&body=Order%20Details%0d%0aName: " +
-            encodeURIComponent(yourFirstName) +
-            "%20" +
-            encodeURIComponent(yourLastName) +
-            "%0d%0aEmail Address: " +
-            encodeURIComponent(yourEmail) +
-            "%0d%0aAddress: " +
-            encodeURIComponent(yourAddress) +
-            "%0d%0aCity: " +
-            encodeURIComponent(yourCity) +
-            "%0d%0aState: " +
-            encodeURIComponent(yourState) +
-            "%0d%0aZip: " +
-            encodeURIComponent(yourZip);
-        }
-      }
+
 
       function newShip() {
         var ship = document.getElementById("shipMeth");
@@ -249,7 +219,7 @@
             </div>
 
             <label for="shipMeth">Shipping Method:</label><br />
-            <select id="shipMeth" name="shipMeth" required>
+            <select id="shipMeth" name="shipMeth" onchange="newShip()" required>
               <option value="1">overnight</option>
               <option value="2">2-days expedited</option>
               <option value="6">6-days ground</option> </select
@@ -429,10 +399,10 @@
           <div class="column-4">
             <div>
               <h3>Cart</h3>
-              <p class="cart">Product ID:</p>
-              <p class="cart">Price:</p>
+              <p class="cart">Product ID: <span id="orderProdID"></span></p>
+              <p class="cart">Price: $<span id="orderPrice"></span></p>
               <label for="units">Number of Units: </label>
-              <select id="units" name="units">
+              <select id="units" name="units" onchange="difUnits()">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -444,9 +414,9 @@
                 <option value="9">9</option>
                 <option value="10">10</option> </select
               ><br /><br />
-              <p>Shipping:</p>
+              <p>Shipping: $<span id="shipPrice"></span></p>
               <br /><br />
-              <p>Total Price:</p>
+              <p>Total Price: $<span id="orderTotPrice"></span></p>
               <br />
               <br />
               <input type="submit" value="Submit Order" />
