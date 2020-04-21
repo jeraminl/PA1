@@ -1,302 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Product Page</title>
-  <link rel="stylesheet" type="text/css" href="css/product.css">
-  <link rel="stylesheet" type="text/css" href="css/header.css">
-  <script>
-    function orderConfirmation() {
-      if (window.confirm('Click "OK" to confirm your order!')) {
-        var yourFirstName = document.getElementById("firstName").value;
-        var yourLastName = document.getElementById("lastName").value;
-        var yourEmail = document.getElementById("email").value;
-        var yourAddress = document.getElementById("address").value;
-        var yourCity = document.getElementById("city").value;
-        var yourState = document.getElementById("state").value;
-        var yourZip = document.getElementById("zip").value;
-        var orderNumber = Math.floor(Math.random() * 100000) + 1;
-        window.location.href = "mailto:" + encodeURIComponent(yourEmail) + "?subject=Order%20Confirmation%20#" + encodeURIComponent(orderNumber) + "&body=Order%20Details%0d%0aName: " + encodeURIComponent(yourFirstName) + "%20" + encodeURIComponent(yourLastName) + "%0d%0aEmail Address: " + encodeURIComponent(yourEmail) + "%0d%0aAddress: " + encodeURIComponent(yourAddress) + "%0d%0aCity: " + encodeURIComponent(yourCity) + "%0d%0aState: " + encodeURIComponent(yourState) + "%0d%0aZip: " + encodeURIComponent(yourZip);
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Page</title>
+    <link rel="stylesheet" type="text/css" href="css/product.css" />
+    <link rel="stylesheet" type="text/css" href="css/header.css" />
+    <script>
+      function orderConfirmation() {
+        if (window.confirm('Click "OK" to confirm your order!')) {
+          var yourFirstName = document.getElementById("firstName").value;
+          var yourLastName = document.getElementById("lastName").value;
+          var yourEmail = document.getElementById("email").value;
+          var yourAddress = document.getElementById("address").value;
+          var yourCity = document.getElementById("city").value;
+          var yourState = document.getElementById("state").value;
+          var yourZip = document.getElementById("zip").value;
+          var orderNumber = Math.floor(Math.random() * 100000) + 1;
+          window.location.href =
+            "mailto:" +
+            encodeURIComponent(yourEmail) +
+            "?subject=Order%20Confirmation%20#" +
+            encodeURIComponent(orderNumber) +
+            "&body=Order%20Details%0d%0aName: " +
+            encodeURIComponent(yourFirstName) +
+            "%20" +
+            encodeURIComponent(yourLastName) +
+            "%0d%0aEmail Address: " +
+            encodeURIComponent(yourEmail) +
+            "%0d%0aAddress: " +
+            encodeURIComponent(yourAddress) +
+            "%0d%0aCity: " +
+            encodeURIComponent(yourCity) +
+            "%0d%0aState: " +
+            encodeURIComponent(yourState) +
+            "%0d%0aZip: " +
+            encodeURIComponent(yourZip);
+        }
       }
-    }
 
-  </script>
+      function newShip() {
+        var ship = document.getElementById("shipMeth");
+        var shipPrice = ship.options[ship.selectedIndex].value;
 
-  <script src="js/product.js"></script>
-</head>
+        if (shipPrice == 1) {
+          document.getElementById("shipPrice").innerHTML = 10;
+        } else if (shipPrice == 2) {
+          document.getElementById("shipPrice").innerHTML = 5;
+        } else {
+          document.getElementById("shipPrice").innerHTML = 0;
+        }
 
+        var units = document.getElementById("units");
+        var newUnits = units.options[units.selectedIndex].value;
 
+        document.getElementById("orderTotPrice").innerHTML =
+          parseInt(document.getElementById("orderPrice").innerHTML) *
+            parseInt(newUnits) +
+          parseInt(document.getElementById("shipPrice").innerHTML);
+      }
 
-<body onload="load()">
-  <div class="flex-container sansserif">
-    <div class="website-header">
-      <ul>
-        <li class="header-image"><img src="blank_keyboard.png" alt="Hobby Logo" height="160" width="400"></li>
-        <li class="header-text">KEYBOARD<br>STORE</li>
-      </ul>
-    </div>
+      function difUnits() {
+        var oldUnits = document.getElementById("units");
+        var newUnits = oldUnits.options[oldUnits.selectedIndex].value;
 
-    <div class="product">
-      <h1 id="productName" class="prod-title"></h1>
+        document.getElementById("orderTotPrice").innerHTML =
+          parseInt(document.getElementById("orderPrice").innerHTML) *
+            parseInt(newUnits) +
+          parseInt(document.getElementById("shipPrice").innerHTML);
+      }
+    </script>
 
-      <!-- Need to figure out how to make an image carousel -->
-      <div id="image-row" class="image-row">
+    <script src="js/product.js"></script>
+  </head>
 
-        <div id="imgModal" class="modal">
-          <span class="close">&times;</span>
-          <img class="modal-content" id="img">
-
-        </div>
-
-
+  <body onload="load()">
+    <div class="flex-container sansserif">
+      <div class="website-header">
+        <ul>
+          <li class="header-image">
+            <img
+              src="blank_keyboard.png"
+              alt="Hobby Logo"
+              height="160"
+              width="400"
+            />
+          </li>
+          <li class="header-text">KEYBOARD<br />STORE</li>
+        </ul>
       </div>
 
-      <!-- Text Beside Image -->
-      <p id="productID">Product ID: </p>
-      <p id="desc" class="prod-details">Descriptions</p>
-      <p id="price" class="price">Price: $</p>
-      <p> Additional Details </p>
-      <ul>
-        <li id="size" class="list-items">Size: </li>
-        <li id="key" class="list-items">Keys: </li>
-      </ul>
-    </div>
+      <div class="product">
+        <h1 id="productName" class="prod-title"></h1>
 
-    <!-- Order Form -->
-    <form class="order-form">
-      <h2 class="prod-title">Order Form</h2>
-      <div class="row">
-        <div class="column">
-          <h3>Personal and Shipping Information</h3>
-          <label for="firstName">First Name</label><br>
-          <input type="text" id="firstName" name="firstName"><br><br>
-
-          <label for="lastName">Last Name:</label><br>
-          <input type="text" id="lastName" name="lastName"><br><br>
-
-          <label for="email">Email Address:</label><br>
-          <input type="email" id="email" name="email"><br><br>
-
-          <label for="phone">Phone Number:</label><br>
-          <input type="text" id="phone" name="phone"><br><br>
-
-          <label for="address">Address:</label><br>
-          <input type="text" id="address" name="address"><br><br>
-
-          <label for="city">City:</label><br>
-          <input type="text" id="city" name="city"><br><br>
-
-          <div class="row">
-            <div class="column-2">
-              <label for="state">State:</label><br>
-              <select id="state" name="state">
-                <option value="AL">AL</option>
-                <option value="AK">AK</option>
-                <option value="AZ">AZ</option>
-                <option value="AR">AR</option>
-                <option value="CA">CA</option>
-                <option value="CO">CO</option>
-                <option value="CT">CT</option>
-                <option value="DE">DE</option>
-                <option value="DC">DC</option>
-                <option value="FL">FL</option>
-                <option value="GA">GA</option>
-                <option value="HI">HI</option>
-                <option value="ID">ID</option>
-                <option value="IL">IL</option>
-                <option value="IN">IN</option>
-                <option value="IA">IA</option>
-                <option value="KS">KS</option>
-                <option value="KY">KY</option>
-                <option value="LA">LA</option>
-                <option value="ME">ME</option>
-                <option value="MD">MD</option>
-                <option value="MA">MA</option>
-                <option value="MI">MI</option>
-                <option value="MN">MN</option>
-                <option value="MS">MS</option>
-                <option value="MO">MO</option>
-                <option value="MT">MT</option>
-                <option value="NE">NE</option>
-                <option value="NV">NV</option>
-                <option value="NH">NH</option>
-                <option value="NJ">NJ</option>
-                <option value="NM">NM</option>
-                <option value="NY">NY</option>
-                <option value="NC">NC</option>
-                <option value="ND">ND</option>
-                <option value="OH">OH</option>
-                <option value="OK">OK</option>
-                <option value="OR">OR</option>
-                <option value="PA">PA</option>
-                <option value="RI">RI</option>
-                <option value="SC">SC</option>
-                <option value="SD">SD</option>
-                <option value="TN">TN</option>
-                <option value="TX">TX</option>
-                <option value="UT">UT</option>
-                <option value="VT">VT</option>
-                <option value="VA">VA</option>
-                <option value="WA">WA</option>
-                <option value="WV">WV</option>
-                <option value="WI">WI</option>
-                <option value="WY">WY</option>
-              </select><br><br>
-            </div>
-
-            <div class="column-3">
-              <label for="zip">Zip Code:</label><br>
-              <input type="text" id="zip" name="zip"><br><br>
-            </div>
-          </div>
-
-          <label for="shipMeth">Shipping Method:</label><br>
-          <select id="shipMeth" name="shipMeth">
-            <option value="1">overnight</option>
-            <option value="2">2-days expedited</option>
-            <option value="6">6-days ground</option>
-          </select><br><br>
-
-          <input type="checkbox" checked="checked"> Billing Address Same as Shipping
-
-        </div>
-
-        <div class="column">
-          <h3>Billing Information</h3>
-          <label for="billingFirstName">First Name on Card</label><br>
-          <input type="text" id="billingFirstName" name="billingFirstName"><br><br>
-
-          <label for="billingLastName">Last Name on Card:</label><br>
-          <input type="text" id="billingLastName" name="billingLastName"><br><br>
-
-          <label for="ccNum">Card Number:</label><br>
-          <input type="text" id="ccNum" name="ccNum"><br><br>
-
-          <div class="row">
-            <div class="column-2">
-              <label for="expMonth">Expiration Month:</label><br>
-              <select id="expMonth" name="expMonth">
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-                <option value="2028">2028</option>
-                <option value="2029">2029</option>
-                <option value="2030">2030</option>
-              </select><br><br>
-            </div>
-
-            <div class="column-3">
-              <label for="cvv">CVV:</label><br>
-              <input type="text" id="cvv" name="cvv"><br><br>
-            </div>
-          </div>
-
-          <label for="billingAddress">Address:</label><br>
-          <input type="text" id="billingAddress" name="billingAddress"><br><br>
-
-          <label for="billingCity">City:</label><br>
-          <input type="text" id="billingCity" name="billingCity"><br><br>
-
-          <div class="row">
-
-            <div class="column-2">
-              <label for="billingState">State:</label><br>
-              <select id="billingState" name="state">
-                <option value="AL">AL</option>
-                <option value="AK">AK</option>
-                <option value="AZ">AZ</option>
-                <option value="AR">AR</option>
-                <option value="CA">CA</option>
-                <option value="CO">CO</option>
-                <option value="CT">CT</option>
-                <option value="DE">DE</option>
-                <option value="DC">DC</option>
-                <option value="FL">FL</option>
-                <option value="GA">GA</option>
-                <option value="HI">HI</option>
-                <option value="ID">ID</option>
-                <option value="IL">IL</option>
-                <option value="IN">IN</option>
-                <option value="IA">IA</option>
-                <option value="KS">KS</option>
-                <option value="KY">KY</option>
-                <option value="LA">LA</option>
-                <option value="ME">ME</option>
-                <option value="MD">MD</option>
-                <option value="MA">MA</option>
-                <option value="MI">MI</option>
-                <option value="MN">MN</option>
-                <option value="MS">MS</option>
-                <option value="MO">MO</option>
-                <option value="MT">MT</option>
-                <option value="NE">NE</option>
-                <option value="NV">NV</option>
-                <option value="NH">NH</option>
-                <option value="NJ">NJ</option>
-                <option value="NM">NM</option>
-                <option value="NY">NY</option>
-                <option value="NC">NC</option>
-                <option value="ND">ND</option>
-                <option value="OH">OH</option>
-                <option value="OK">OK</option>
-                <option value="OR">OR</option>
-                <option value="PA">PA</option>
-                <option value="RI">RI</option>
-                <option value="SC">SC</option>
-                <option value="SD">SD</option>
-                <option value="TN">TN</option>
-                <option value="TX">TX</option>
-                <option value="UT">UT</option>
-                <option value="VT">VT</option>
-                <option value="VA">VA</option>
-                <option value="WA">WA</option>
-                <option value="WV">WV</option>
-                <option value="WI">WI</option>
-                <option value="WY">WY</option>
-              </select><br><br>
-            </div>
-
-            <div class="column-3">
-              <label for="billingZip">Zip Code:</label><br>
-              <input type="text" id="billingZip" name="billingZip"><br><br>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="column-4">
-          <div>
-            <h3>Cart</h3>
-            <p class="cart">Product ID: </p>
-            <p class="cart">Price: </p>
-            <label for="units">Number of Units: </label>
-            <select id="units" name="units">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select><br><br>
-            <p>Shipping: </p> <br><br>
-            <p>Total Price: </p> <br> <br>
-            <button onclick="orderConfirmation()">Submit Order</button>
+        <!-- Need to figure out how to make an image carousel -->
+        <div id="image-row" class="image-row">
+          <div id="imgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img" />
           </div>
         </div>
+
+        <!-- Text Beside Image -->
+        <p id="productID">Product ID:</p>
+        <p id="desc" class="prod-details">Descriptions</p>
+        <p id="price" class="price">Price: $</p>
+        <p>Additional Details</p>
+        <ul>
+          <li id="size" class="list-items">Size:</li>
+          <li id="key" class="list-items">Keys:</li>
+        </ul>
       </div>
-    </form>
 
-  </div>
-</body>
+      <!-- Order Form -->
+      <form class="order-form">
+        <h2 class="prod-title">Order Form</h2>
+        <div class="row">
+          <div class="column">
+            <h3>Personal and Shipping Information</h3>
+            <label for="firstName">First Name</label><br />
+            <input type="text" id="firstName" name="firstName" /><br /><br />
 
+            <label for="lastName">Last Name:</label><br />
+            <input type="text" id="lastName" name="lastName" /><br /><br />
+
+            <label for="email">Email Address:</label><br />
+            <input type="email" id="email" name="email" /><br /><br />
+
+            <label for="phone">Phone Number:</label><br />
+            <input type="text" id="phone" name="phone" /><br /><br />
+
+            <label for="address">Address:</label><br />
+            <input type="text" id="address" name="address" /><br /><br />
+
+            <label for="city">City:</label><br />
+            <input type="text" id="city" name="city" /><br /><br />
+
+            <div class="row">
+              <div class="column-2">
+                <label for="state">State:</label><br />
+                <select id="state" name="state">
+                  <option value="AL">AL</option>
+                  <option value="AK">AK</option>
+                  <option value="AZ">AZ</option>
+                  <option value="AR">AR</option>
+                  <option value="CA">CA</option>
+                  <option value="CO">CO</option>
+                  <option value="CT">CT</option>
+                  <option value="DE">DE</option>
+                  <option value="DC">DC</option>
+                  <option value="FL">FL</option>
+                  <option value="GA">GA</option>
+                  <option value="HI">HI</option>
+                  <option value="ID">ID</option>
+                  <option value="IL">IL</option>
+                  <option value="IN">IN</option>
+                  <option value="IA">IA</option>
+                  <option value="KS">KS</option>
+                  <option value="KY">KY</option>
+                  <option value="LA">LA</option>
+                  <option value="ME">ME</option>
+                  <option value="MD">MD</option>
+                  <option value="MA">MA</option>
+                  <option value="MI">MI</option>
+                  <option value="MN">MN</option>
+                  <option value="MS">MS</option>
+                  <option value="MO">MO</option>
+                  <option value="MT">MT</option>
+                  <option value="NE">NE</option>
+                  <option value="NV">NV</option>
+                  <option value="NH">NH</option>
+                  <option value="NJ">NJ</option>
+                  <option value="NM">NM</option>
+                  <option value="NY">NY</option>
+                  <option value="NC">NC</option>
+                  <option value="ND">ND</option>
+                  <option value="OH">OH</option>
+                  <option value="OK">OK</option>
+                  <option value="OR">OR</option>
+                  <option value="PA">PA</option>
+                  <option value="RI">RI</option>
+                  <option value="SC">SC</option>
+                  <option value="SD">SD</option>
+                  <option value="TN">TN</option>
+                  <option value="TX">TX</option>
+                  <option value="UT">UT</option>
+                  <option value="VT">VT</option>
+                  <option value="VA">VA</option>
+                  <option value="WA">WA</option>
+                  <option value="WV">WV</option>
+                  <option value="WI">WI</option>
+                  <option value="WY">WY</option> </select
+                ><br /><br />
+              </div>
+
+              <div class="column-3">
+                <label for="zip">Zip Code:</label><br />
+                <input type="text" id="zip" name="zip" /><br /><br />
+              </div>
+            </div>
+
+            <label for="shipMeth">Shipping Method:</label><br />
+            <select id="shipMeth" name="shipMeth" onchange="newShip()">
+              <option value="1">overnight</option>
+              <option value="2">2-days expedited</option>
+              <option value="6">6-days ground</option> </select
+            ><br /><br />
+
+            <input type="checkbox" checked="checked" /> Billing Address Same as
+            Shipping
+          </div>
+
+          <div class="column">
+            <h3>Billing Information</h3>
+            <label for="billingFirstName">First Name on Card</label><br />
+            <input
+              type="text"
+              id="billingFirstName"
+              name="billingFirstName"
+            /><br /><br />
+
+            <label for="billingLastName">Last Name on Card:</label><br />
+            <input
+              type="text"
+              id="billingLastName"
+              name="billingLastName"
+            /><br /><br />
+
+            <label for="ccNum">Card Number:</label><br />
+            <input type="text" id="ccNum" name="ccNum" /><br /><br />
+
+            <div class="row">
+              <div class="column-2">
+                <label for="expMonth">Expiration Month:</label><br />
+                <select id="expMonth" name="expMonth">
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+                  <option value="2025">2025</option>
+                  <option value="2026">2026</option>
+                  <option value="2027">2027</option>
+                  <option value="2028">2028</option>
+                  <option value="2029">2029</option>
+                  <option value="2030">2030</option> </select
+                ><br /><br />
+              </div>
+
+              <div class="column-3">
+                <label for="cvv">CVV:</label><br />
+                <input type="text" id="cvv" name="cvv" /><br /><br />
+              </div>
+            </div>
+
+            <label for="billingAddress">Address:</label><br />
+            <input
+              type="text"
+              id="billingAddress"
+              name="billingAddress"
+            /><br /><br />
+
+            <label for="billingCity">City:</label><br />
+            <input
+              type="text"
+              id="billingCity"
+              name="billingCity"
+            /><br /><br />
+
+            <div class="row">
+              <div class="column-2">
+                <label for="billingState">State:</label><br />
+                <select id="billingState" name="state">
+                  <option value="AL">AL</option>
+                  <option value="AK">AK</option>
+                  <option value="AZ">AZ</option>
+                  <option value="AR">AR</option>
+                  <option value="CA">CA</option>
+                  <option value="CO">CO</option>
+                  <option value="CT">CT</option>
+                  <option value="DE">DE</option>
+                  <option value="DC">DC</option>
+                  <option value="FL">FL</option>
+                  <option value="GA">GA</option>
+                  <option value="HI">HI</option>
+                  <option value="ID">ID</option>
+                  <option value="IL">IL</option>
+                  <option value="IN">IN</option>
+                  <option value="IA">IA</option>
+                  <option value="KS">KS</option>
+                  <option value="KY">KY</option>
+                  <option value="LA">LA</option>
+                  <option value="ME">ME</option>
+                  <option value="MD">MD</option>
+                  <option value="MA">MA</option>
+                  <option value="MI">MI</option>
+                  <option value="MN">MN</option>
+                  <option value="MS">MS</option>
+                  <option value="MO">MO</option>
+                  <option value="MT">MT</option>
+                  <option value="NE">NE</option>
+                  <option value="NV">NV</option>
+                  <option value="NH">NH</option>
+                  <option value="NJ">NJ</option>
+                  <option value="NM">NM</option>
+                  <option value="NY">NY</option>
+                  <option value="NC">NC</option>
+                  <option value="ND">ND</option>
+                  <option value="OH">OH</option>
+                  <option value="OK">OK</option>
+                  <option value="OR">OR</option>
+                  <option value="PA">PA</option>
+                  <option value="RI">RI</option>
+                  <option value="SC">SC</option>
+                  <option value="SD">SD</option>
+                  <option value="TN">TN</option>
+                  <option value="TX">TX</option>
+                  <option value="UT">UT</option>
+                  <option value="VT">VT</option>
+                  <option value="VA">VA</option>
+                  <option value="WA">WA</option>
+                  <option value="WV">WV</option>
+                  <option value="WI">WI</option>
+                  <option value="WY">WY</option> </select
+                ><br /><br />
+              </div>
+
+              <div class="column-3">
+                <label for="billingZip">Zip Code:</label><br />
+                <input
+                  type="text"
+                  id="billingZip"
+                  name="billingZip"
+                /><br /><br />
+              </div>
+            </div>
+          </div>
+
+          <div class="column-4">
+            <div>
+              <h3>Cart</h3>
+              <p class="cart">Product ID: <span id="orderProdID"></span></p>
+              <p class="cart">Price: $<span id="orderPrice"></span></p>
+              <label for="units">Number of Units: </label>
+              <select id="units" name="units" onchange="difUnits()">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option> </select
+              ><br /><br />
+              <p>Shipping: $<span id="shipPrice"></span></p>
+              <br /><br />
+              <p>Total Price: $<span id="orderTotPrice"></span></p>
+              <br />
+              <br />
+              <button onclick="orderConfirmation()">Submit Order</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>
