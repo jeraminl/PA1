@@ -6,7 +6,8 @@
       "imgPaths": ["img/0/0.jpg", "img/0/1.jpg", "img/0/2.jpg"],
       "size": "Full",
       "price": 23,
-      "switch": "Membrane"
+      "switch": "Membrane",
+      "Category": "Office"
 
     },
     "1": {
@@ -15,7 +16,8 @@
       "imgPaths": ["img/1/0.jpg", "img/1/1.jpg", "img/1/2.jpg"],
       "size": "Full",
       "price": 33.94,
-      "switch": "Membrane"
+      "switch": "Membrane",
+      "Category": "Office"
     },
     "2": {
       "name": "Redragon K502 RGB Membrane Gaming Keyboard",
@@ -23,7 +25,8 @@
       "imgPaths": ["img/2/0.jpg", "img/2/1.jpg", "img/2/2.jpg"],
       "size": "Full",
       "price": 26.99,
-      "switch": "Membrane"
+      "switch": "Membrane",
+      "Category": "Gaming"
     },
     "3": {
       "name": "Razer Cysnosa RGB Gaming Keyboard",
@@ -31,7 +34,8 @@
       "imgPaths": ["img/3/0.jpg", "img/3/1.jpg", "img/3/2.jpg"],
       "size": "Full",
       "price": 44.99,
-      "switch": "Membrane"
+      "switch": "Membrane",
+      "Category": "Gaming"
     },
     "4": {
       "name": "Redragon K551 Mechanical Gaming Keyboard",
@@ -39,7 +43,8 @@
       "imgPaths": ["img/4/0.jpg", "img/4/1.jpg", "img/4/2.jpg"],
       "size": "Full",
       "price": 43.99,
-      "switch": "Cherry MX Blue Equivalent"
+      "switch": "Cherry MX Blue Equivalent",
+      "Category": "Gaming"
     },
     "5": {
       "name": "Redragon K552 60% Mechanical Gaming Keyboard",
@@ -47,7 +52,8 @@
       "imgPaths": ["img/5/0.jpg", "img/5/1.jpg", "img/5/2.jpg"],
       "size": "TKL: Tenkeyless",
       "price": 36.99,
-      "switch": ""
+      "switch": "",
+      "Category": "Gaming"
     },
     "6": {
       "name": "Redragon S101 Wired Gaming Keyboard and Mouse",
@@ -55,7 +61,8 @@
       "imgPaths": ["img/6/0.jpg", "img/6/1.jpg", "img/6/2.jpg"],
       "size": "Full",
       "price": 39.98,
-      "switch": "Membrane"
+      "switch": "Membrane",
+      "Category": "Gaming"
     },
     "7": {
       "name": "HyperX Alloy Pro-Tenkeyless Mechanical Keyboard",
@@ -63,7 +70,8 @@
       "imgPaths": ["img/7/0.jpg", "img/7/1.jpg", "img/7/2.jpg"],
       "size": "TKL: Tenkeyless",
       "price": 56.99,
-      "switch": "Cherry MX Blue"
+      "switch": "Cherry MX Blue",
+      "Category": "Professional"
     },
     "8": {
       "name": "Cooler Master MK730 TKL Mechanical Keyboard",
@@ -71,7 +79,8 @@
       "imgPaths": ["img/8/0.jpg", "img/8/1.jpg", "img/8/2.jpg"],
       "size": "TKL: Tenkeyless",
       "price": 111.99,
-      "switch": "Cherry MX Brown"
+      "switch": "Cherry MX Brown",
+      "Category": "Professional"
     },
     "9": {
       "name": "Corsair K70 RGB Mechanical Gaming Keyboard",
@@ -79,7 +88,8 @@
       "imgPaths": ["img/9/0.jpg", "img/9/1.jpg", "img/9/2.jpg"],
       "size": "Full",
       "price": 119.99,
-      "switch": "Cherry MX Speed"
+      "switch": "Cherry MX Speed",
+      "Category": "Gaming"
     },
     "10": {
       "name": "DAS Keyboard 4 Professional",
@@ -87,7 +97,8 @@
       "imgPaths": ["img/10/0.jpg", "img/10/1.jpg", "img/10/2.jpg"],
       "size": "Full",
       "price": 169.00,
-      "switch": "Cherry MX Blue"
+      "switch": "Cherry MX Blue",
+      "Category": "Professional"
     },
     "11": {
       "name": "HELLO GANSS Full Mechanical Keyboard",
@@ -95,7 +106,8 @@
       "imgPaths": ["img/11/0.jpg", "img/11/1.jpg", "img/11/2.jpg"],
       "size": "Full",
       "price": 99.99,
-      "switch": "Cherry MX Brown"
+      "switch": "Cherry MX Brown",
+      "Category": "Gaming"
     },
     "12": {
       "name": "HyperX Alloy Elite Mechanical Keyboard",
@@ -103,7 +115,8 @@
       "imgPaths": ["img/12/0.jpg", "img/12/1.jpg", "img/12/2.jpg"],
       "size": "Full",
       "price": 99.99,
-      "switch": "Cherry MX Brown"
+      "switch": "Cherry MX Brown",
+      "Category": "Gaming"
     },
     "13": {
       "name": "HELLO GANSS Mini Mechanical Keyboard",
@@ -111,7 +124,8 @@
       "imgPaths": ["img/13/0.jpg", "img/13/1.jpg", "img/13/2.jpg"],
       "size": "",
       "price": 69.99,
-      "switch": "Cherry MX Blue"
+      "switch": "Cherry MX Blue",
+      "Category": "Professional"
     },
     "14": {
       "name": "Logitech G610 Orion Backlit Mechanical Keyboard",
@@ -119,7 +133,8 @@
       "imgPaths": ["img/14/0.jpg", "img/14/1.jpg", "img/14/2.jpg"],
       "size": "Full",
       "price": 82.45,
-      "switch": "Cherry MX Red"
+      "switch": "Cherry MX Red",
+      "Category": "Professional"
     }
   }
 }
