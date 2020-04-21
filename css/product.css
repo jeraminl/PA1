@@ -41,14 +41,19 @@
   flex: 100%;
   width: 100%;
   position: relative;
-  right: -40px;
+  right: -90px;
 }
 
 .column-3 {
   flex: 100%;
   width: 100%;
   position: relative;
-  left: -40px;
+  left: -90px;
+}
+
+.column-4 {
+  flex: 30%;
+  margin-left: 50px;
 }
 
 .prod-img {
