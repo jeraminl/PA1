@@ -14,10 +14,12 @@
 
 .sansserif {
   font-family: Verdana, Helvetica, sans-serif;
+  color: white;
 }
 
 .prod-title {
   margin-left: 50px;
+  text-align: center;
   /* border-style: ridge; */
 }
 
@@ -151,4 +153,90 @@ cart {
 .block:hover {
   background-color: #ddd;
   color: black;
+}
+
+.image-row{
+  display: flex;
+  padding: 0 4px;
+}
+
+.image-column{
+  background-color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  flex: 33%;
+  max-width: 33%;
+  padding: 0 4px;
+  margin: 10px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.photo{
+  max-width: 100%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+
+.photo:hover{
+  transform: scale(1.50);
+}
+
+#img0, #img1, #img2{
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#img0:hover, #img1:hover, #img2:hover {opacity: 0.7;}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
 }

@@ -22,11 +22,13 @@
     }
 
   </script>
+
+  <script src = "js/product.js"></script>
 </head>
 
 
 
-<body>
+<body onload="load()">
   <div class="flex-container sansserif">
     <div class="website-header">
       <ul>
@@ -39,19 +41,25 @@
       <h1 class="prod-title"> Product Name </h1>
 
       <!-- Need to figure out how to make an image carousel -->
-      <div class="image-wheel">
-        <img class="prod-img" src="test_keyboard.png" alt="test keyboard img">
+      <div id="image-row" class="image-row">
+
+        <div id="imgModal" class="modal">
+          <span class="close">&times;</span>
+          <img class="modal-content" id="img">
+
+        </div>
+
+
       </div>
 
       <!-- Text Beside Image -->
-      <p>Product ID: </p>
-      <p>Brand</p>
-      <p class="prod-details">Descriptions</p>
-      <p class="price">Price: $</p>
+      <p id = "productID">Product ID: </p>
+      <p id = "desc" class="prod-details">Descriptions</p>
+      <p id="price" class="price">Price: $</p>
       <p> Additional Details </p>
       <ul>
-        <li class="list-items">Size: </li>
-        <li class="list-items">Keys: </li>
+        <li id="size" class="list-items">Size: </li>
+        <li id="key" class="list-items">Keys: </li>
       </ul>
     </div>
 
