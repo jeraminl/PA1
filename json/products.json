@@ -7,8 +7,7 @@
       "size": "Full",
       "price": 23,
       "switch": "Membrane",
-      "Category": "Office"
-
+      "category": "Office"
     },
     "1": {
       "name": "Dell Wireless Keyboard and Mouse KM636",
@@ -17,7 +16,7 @@
       "size": "Full",
       "price": 33.94,
       "switch": "Membrane",
-      "Category": "Office"
+      "category": "Office"
     },
     "2": {
       "name": "Redragon K502 RGB Membrane Gaming Keyboard",
@@ -26,7 +25,7 @@
       "size": "Full",
       "price": 26.99,
       "switch": "Membrane",
-      "Category": "Gaming"
+      "category": "Gaming"
     },
     "3": {
       "name": "Razer Cysnosa RGB Gaming Keyboard",
@@ -35,7 +34,7 @@
       "size": "Full",
       "price": 44.99,
       "switch": "Membrane",
-      "Category": "Gaming"
+      "category": "Gaming"
     },
     "4": {
       "name": "Redragon K551 Mechanical Gaming Keyboard",
@@ -44,7 +43,7 @@
       "size": "Full",
       "price": 43.99,
       "switch": "Cherry MX Blue Equivalent",
-      "Category": "Gaming"
+      "category": "Gaming"
     },
     "5": {
       "name": "Redragon K552 60% Mechanical Gaming Keyboard",
@@ -53,7 +52,7 @@
       "size": "TKL: Tenkeyless",
       "price": 36.99,
       "switch": "",
-      "Category": "Gaming"
+      "category": "Gaming"
     },
     "6": {
       "name": "Redragon S101 Wired Gaming Keyboard and Mouse",
@@ -62,7 +61,7 @@
       "size": "Full",
       "price": 39.98,
       "switch": "Membrane",
-      "Category": "Gaming"
+      "category": "Gaming"
     },
     "7": {
       "name": "HyperX Alloy Pro-Tenkeyless Mechanical Keyboard",
@@ -71,7 +70,7 @@
       "size": "TKL: Tenkeyless",
       "price": 56.99,
       "switch": "Cherry MX Blue",
-      "Category": "Professional"
+      "category": "Professional"
     },
     "8": {
       "name": "Cooler Master MK730 TKL Mechanical Keyboard",
@@ -80,7 +79,7 @@
       "size": "TKL: Tenkeyless",
       "price": 111.99,
       "switch": "Cherry MX Brown",
-      "Category": "Professional"
+      "category": "Professional"
     },
     "9": {
       "name": "Corsair K70 RGB Mechanical Gaming Keyboard",
@@ -89,16 +88,16 @@
       "size": "Full",
       "price": 119.99,
       "switch": "Cherry MX Speed",
-      "Category": "Gaming"
+      "category": "Gaming"
     },
     "10": {
       "name": "DAS Keyboard 4 Professional",
       "description": "Cherry MX Blue professional mechanical keyboard for Windows and Mac.",
       "imgPaths": ["img/10/0.jpg", "img/10/1.jpg", "img/10/2.jpg"],
       "size": "Full",
-      "price": 169.00,
+      "price": 169.0,
       "switch": "Cherry MX Blue",
-      "Category": "Professional"
+      "category": "Professional"
     },
     "11": {
       "name": "HELLO GANSS Full Mechanical Keyboard",
@@ -107,7 +106,7 @@
       "size": "Full",
       "price": 99.99,
       "switch": "Cherry MX Brown",
-      "Category": "Gaming"
+      "category": "Gaming"
     },
     "12": {
       "name": "HyperX Alloy Elite Mechanical Keyboard",
@@ -116,7 +115,7 @@
       "size": "Full",
       "price": 99.99,
       "switch": "Cherry MX Brown",
-      "Category": "Gaming"
+      "category": "Gaming"
     },
     "13": {
       "name": "HELLO GANSS Mini Mechanical Keyboard",
@@ -125,7 +124,7 @@
       "size": "",
       "price": 69.99,
       "switch": "Cherry MX Blue",
-      "Category": "Professional"
+      "category": "Professional"
     },
     "14": {
       "name": "Logitech G610 Orion Backlit Mechanical Keyboard",
@@ -134,7 +133,7 @@
       "size": "Full",
       "price": 82.45,
       "switch": "Cherry MX Red",
-      "Category": "Professional"
+      "category": "Professional"
     }
   }
 }
