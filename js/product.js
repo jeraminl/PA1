@@ -15,19 +15,34 @@ function load() {
     .then(function(resp) {
       return resp.json();
     })
-    .then(function(data) {
+    .then(function (data) {
       console.log(data.id[productID]);
+      document.getElementById("productName").innerHTML = JSON.stringify(
+        data.id[productID].name
+      );
       document.getElementById("desc").innerHTML =
         "Description: " + JSON.stringify(data.id[productID].description);
-
       document.getElementById("productID").innerHTML =
         "Product ID: " + productID;
       document.getElementById("price").innerHTML =
-        "Price: " + data.id[productID].price;
+        "Price: $" + data.id[productID].price;
       document.getElementById("size").innerHTML =
         "Size: " + data.id[productID].size;
       document.getElementById("key").innerHTML =
         "Switch: " + data.id[productID].switch;
+      document.getElementById("orderProdID").innerHTML = productID;
+      document.getElementById("orderPrice").innerHTML =
+        data.id[productID].price;
+
+      var ship = document.getElementById("shipMeth");
+      var shipPrice = ship.options[ship.selectedIndex].value;
+      if (shipPrice == 1) {
+        document.getElementById("shipPrice").innerHTML = 10;
+      }
+
+      document.getElementById("orderTotPrice").innerHTML =
+        data.id[productID].price +
+        parseInt(document.getElementById("shipPrice").innerHTML);
 
       for (var i = 0; i < 3; i++) {
         var img0 = document.createElement("img");
