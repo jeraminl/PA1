@@ -5,48 +5,12 @@
     <title>Product Page</title>
     <link rel="stylesheet" type="text/css" href="css/product.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css" />
-    <script src="js/validation.js"></script>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Product Page</title>
-    <link rel="stylesheet" type="text/css" href="css/product.css" />
-    <link rel="stylesheet" type="text/css" href="css/header.css" />
     <script>
 
-
-      function newShip() {
-        var ship = document.getElementById("shipMeth");
-        var shipPrice = ship.options[ship.selectedIndex].value;
-
-        if (shipPrice == 1) {
-          document.getElementById("shipPrice").innerHTML = 10;
-        } else if (shipPrice == 2) {
-          document.getElementById("shipPrice").innerHTML = 5;
-        } else {
-          document.getElementById("shipPrice").innerHTML = 0;
-        }
-
-        var units = document.getElementById("units");
-        var newUnits = units.options[units.selectedIndex].value;
-
-        document.getElementById("orderTotPrice").innerHTML =
-          parseInt(document.getElementById("orderPrice").innerHTML) *
-            parseInt(newUnits) +
-          parseInt(document.getElementById("shipPrice").innerHTML);
-      }
-
-      function difUnits() {
-        var oldUnits = document.getElementById("units");
-        var newUnits = oldUnits.options[oldUnits.selectedIndex].value;
-
-        document.getElementById("orderTotPrice").innerHTML =
-          parseInt(document.getElementById("orderPrice").innerHTML) *
-            parseInt(newUnits) +
-          parseInt(document.getElementById("shipPrice").innerHTML);
-      }
     </script>
 
     <script src="js/product.js"></script>
+    <script src="js/validation.js"></script>
   </head>
 
   <body onload="load()">

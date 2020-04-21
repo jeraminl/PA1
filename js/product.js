@@ -15,7 +15,7 @@ function load() {
     .then(function(resp) {
       return resp.json();
     })
-    .then(function (data) {
+    .then(function(data) {
       console.log(data.id[productID]);
       document.getElementById("productName").innerHTML = JSON.stringify(
         data.id[productID].name

@@ -26,7 +26,13 @@ function validate() {
     var billCity = document.getElementById("billingCity").value;
     var billState = document.getElementById("billingState").value;
     var billZip = document.getElementById("billingZip").value;
+
+    var productID = document.getElementById("productID").value;
+    var productPrice = document.getElementById("orderPrice").values;
     var amount = document.getElementById("units").value;
+    var shippingMethod = document.getElementById("shipMeth").values;
+    var shipPrice = document.getElementById("shipPrice").values;
+    var totalPrice = document.getElementById("orderTotPrice").values;
 
     var orderNumber = Math.floor(Math.random() * 100000) + 1;
 
@@ -62,9 +68,52 @@ function validate() {
         "%0d%0aState: " +
         encodeURIComponent(billState) +
         "%0d%0aZip: " +
-        encodeURIComponent(billZip),
+        encodeURIComponent(billZip) +
+        "%0d%0aProduct ID: " +
+        encodeURIComponent(productID) +
+        "%0d%0aUnit Price: " +
+        encodeURIComponent(productPrice) +
+        "%0d%0aShipping: " +
+        encodeURIComponent(shippingMethod) +
+        "%0d%0aAmount: " +
+        encodeURIComponent(amount) +
+        "%0d%0aShipping Price: " +
+        encodeURIComponent(shipPrice) +
+        "%0d%0aTotal Price: " +
+        encodeURIComponent(totalPrice),
       "_blank",
       "location=yes,height=570,width=520"
     );
   }
+}
+
+function newShip() {
+  var ship = document.getElementById("shipMeth");
+  var shipPrice = ship.options[ship.selectedIndex].value;
+
+  if (shipPrice == 1) {
+    document.getElementById("shipPrice").innerHTML = 10;
+  } else if (shipPrice == 2) {
+    document.getElementById("shipPrice").innerHTML = 5;
+  } else {
+    document.getElementById("shipPrice").innerHTML = 0;
+  }
+
+  var units = document.getElementById("units");
+  var newUnits = units.options[units.selectedIndex].value;
+
+  document.getElementById("orderTotPrice").innerHTML =
+    parseInt(document.getElementById("orderPrice").innerHTML) *
+    parseInt(newUnits) +
+    parseInt(document.getElementById("shipPrice").innerHTML);
+}
+
+function difUnits() {
+  var oldUnits = document.getElementById("units");
+  var newUnits = oldUnits.options[oldUnits.selectedIndex].value;
+
+  document.getElementById("orderTotPrice").innerHTML =
+    parseInt(document.getElementById("orderPrice").innerHTML) *
+    parseInt(newUnits) +
+    parseInt(document.getElementById("shipPrice").innerHTML);
 }
