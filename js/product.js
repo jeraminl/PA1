@@ -5,17 +5,17 @@ function load() {
   var requestInit = {
     method: "GET",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json"
     },
     mode: "cors",
-    cache: "default",
+    cache: "default"
   };
   let re = new Request("../json/products.json", requestInit);
   fetch(re)
-    .then(function (resp) {
+    .then(function(resp) {
       return resp.json();
     })
-    .then(function (data) {
+    .then(function(data) {
       console.log(data.id[productID]);
       document.getElementById("productName").innerHTML = JSON.stringify(
         data.id[productID].name
@@ -66,13 +66,13 @@ function modalZoom(el) {
   var modal = document.getElementById("imgModal");
 
   var modalImg = document.getElementById("img");
-  el.onclick = function () {
+  el.onclick = function() {
     modal.style.display = "block";
     modalImg.src = el.src;
   };
 
   var span = document.getElementsByClassName("close")[0];
-  span.onclick = function () {
+  span.onclick = function() {
     modal.style.display = "none";
   };
 }

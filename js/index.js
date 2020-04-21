@@ -1,75 +1,109 @@
-function loadProduct(id){
-  window.location.href = "product.html?Id="+id;
+function loadProduct(id) {
+  window.location.href = "product.html?Id=" + id;
 }
 
-
-function load(){
+function load() {
   var requestInit = {
-    method: 'GET',
+    method: "GET",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     },
-    mode: 'cors',
-    cache: 'default' };
+    mode: "cors",
+    cache: "default"
+  };
   let re = new Request("../json/products.json", requestInit);
   fetch(re)
-    .then(function(resp){
+    .then(function(resp) {
       return resp.json();
     })
     .then(function(data) {
       var amount = Object.keys(data.id).length;
-      console.log(amount);
-      for (var i = 0; i < amount; i++){
-        console.log(data.id[i]);
+      for (var i = 0; i < amount; i++) {
+        if (data.id[i].category == "Office") {
+          var img = document.createElement("img");
+          img.setAttribute("src", "img/" + i + "/0.jpg");
+          img.setAttribute("class", "photo");
 
-        var img = document.createElement("img");
-        img.setAttribute("src","img/"+i+"/0.jpg");
-        img.setAttribute("style",
-          "max-width: 100%; " +
-          "height: auto;");
+          var imgCell = document.createElement("div");
+          imgCell.setAttribute("class", "grid-img");
 
+          imgCell.appendChild(img);
 
-        var imgCell = document.createElement("div");
-        imgCell.setAttribute("style",
-          "width: 400px; " +
-          "height: 400px" +
-          "align-items: center;" +
-          "color: white;" +
-          "background-image:  url('img/white.jpg');" +
-          "background-size: 100% 100%;" +
-          "max-width: 400px;" +
-          "background-attachment: fixed;")
+          var p = document.createElement("p");
+          p.appendChild(document.createTextNode("$" + data.id[i].price));
 
-        imgCell.appendChild(img);
+          var link = document.createElement("a");
+          link.setAttribute("href", "product.html?Id=" + i);
+          link.setAttribute("name", JSON.stringify(data.id[i].name));
+          link.setAttribute("style", "color:black; text-decoration: none;");
+          link.appendChild(
+            document.createTextNode(data.id[i].name.toUpperCase())
+          );
+          link.appendChild(imgCell);
+          link.appendChild(p);
 
+          var cell = document.createElement("div");
+          cell.setAttribute("class", "grid-item");
+          cell.appendChild(link);
 
-        var p = document.createElement("p");
-        p.appendChild(document.createTextNode("$"+data.id[i].price));
+          document.getElementById("productListOffice").appendChild(cell);
+        } else if (data.id[i].category == "Gaming") {
+          var img = document.createElement("img");
+          img.setAttribute("src", "img/" + i + "/0.jpg");
+          img.setAttribute("class", "photo");
 
-        var link = document.createElement("a");
-        link.setAttribute("href","product.html?Id="+i);
-        link.setAttribute("name", JSON.stringify(data.id[i].name));
-        link.setAttribute("style","color:white; text-decoration: none;")
-        link.appendChild(document.createTextNode(data.id[i].name.toUpperCase()));
-        link.appendChild(imgCell);
+          var imgCell = document.createElement("div");
+          imgCell.setAttribute("class", "grid-img");
 
+          imgCell.appendChild(img);
 
+          var p = document.createElement("p");
+          p.appendChild(document.createTextNode("$" + data.id[i].price));
 
-        var cell = document.createElement("div");
-        cell.setAttribute("class","grid-item");
-        cell.appendChild(link);
-        cell.appendChild(p);
+          var link = document.createElement("a");
+          link.setAttribute("href", "product.html?Id=" + i);
+          link.setAttribute("name", JSON.stringify(data.id[i].name));
+          link.setAttribute("style", "color:black; text-decoration: none;");
+          link.appendChild(
+            document.createTextNode(data.id[i].name.toUpperCase())
+          );
+          link.appendChild(imgCell);
+          link.appendChild(p);
 
+          var cell = document.createElement("div");
+          cell.setAttribute("class", "grid-item");
+          cell.appendChild(link);
 
-        document.getElementById("productList").appendChild(cell);
+          document.getElementById("productListGaming").appendChild(cell);
+        } else if (data.id[i].category == "Professional") {
+          var img = document.createElement("img");
+          img.setAttribute("src", "img/" + i + "/0.jpg");
+          img.setAttribute("class", "photo");
 
-      };
+          var imgCell = document.createElement("div");
+          imgCell.setAttribute("class", "grid-img");
 
+          imgCell.appendChild(img);
 
+          var p = document.createElement("p");
+          p.appendChild(document.createTextNode("$" + data.id[i].price));
 
+          var link = document.createElement("a");
+          link.setAttribute("href", "product.html?Id=" + i);
+          link.setAttribute("name", JSON.stringify(data.id[i].name));
+          link.setAttribute("style", "color:black; text-decoration: none;");
+          link.appendChild(
+            document.createTextNode(data.id[i].name.toUpperCase())
+          );
+          link.appendChild(imgCell);
+          link.appendChild(p);
 
+          var cell = document.createElement("div");
+          cell.setAttribute("class", "grid-item");
+          cell.appendChild(link);
 
-
-
+          document.getElementById("productListProfessional").appendChild(cell);
+        }
+      }
     });
 }
