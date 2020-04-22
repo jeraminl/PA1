@@ -143,6 +143,7 @@ cart {
   color: white;
   font-family: fantasy;
   font-style: italic;
+  text-decoration: none;
 }
 
 .block {
