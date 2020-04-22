@@ -1,6 +1,6 @@
 # PA1
 
-URL:
+URL: http://circinus-42.ics.uci.edu:8080/project1/index.html
 
 Layout: Our homepage features a logo at the top of the screen, followed by 3 sections that seperate the keyboards our retailer sells by category, Office, Gaming, and Professional. Each product we have available are displayed within their own product windows, and lists the name and price of the product. The product windows also hover when you mouse over a product in order to assist the user in identifying which product they will explore. Also, we have an About Us section at the bottom of the page.
 
@@ -27,3 +27,9 @@ Satisfied Requirement Locations:
 9. Located in index.css and product.css.
 
 10. Tracking mouse movements can be done on both the landing page and the product pages when hovering over product cells or product images.
+
+
+Other usability note:
+
+1. clicking the logo at the top when in the product page will bring you back to index
+2. clicking on photos in the product page will pop up a modal
