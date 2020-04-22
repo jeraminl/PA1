@@ -1,4 +1,8 @@
 # PA1
+Group Members:
+- Gary Tan (5084525) 
+- Jeramin Leong (12768778)
+- David Bailey Rodriguez (61923528)
 
 URL: http://circinus-42.ics.uci.edu:8080/project1/index.html
 
