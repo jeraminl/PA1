@@ -10,7 +10,7 @@ function load() {
     mode: "cors",
     cache: "default"
   };
-  let re = new Request("../json/products.json", requestInit);
+  let re = new Request("./json/products.json", requestInit);
   fetch(re)
     .then(function(resp) {
       return resp.json();
