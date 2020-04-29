@@ -76,3 +76,18 @@ function modalZoom(el) {
     modal.style.display = "none";
   };
 }
+
+function fillInfo() {
+  var params = new URLSearchParams(window.location.search);
+  var productID = params.get("Id");
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("productInfo").innerHTML = this.responseText;
+    }
+  };
+  xmlhttp.open("GET", "./php/fill_product_info.php?Id=" + productID, true);
+  console.log("sending");
+  xmlhttp.send();
+}
