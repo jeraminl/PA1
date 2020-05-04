@@ -4,17 +4,17 @@ $dbhost = 'localhost:3306';
 $dbuser = 'root';
 $dbpass = '';
 $dbname = 'store_db';
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+try{
+  $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "SELECT id, name, price FROM products WHERE category = 'Gaming'";
-$result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0){
-  while($row = mysqli_fetch_assoc($result)){
+  $sql = "SELECT id, name, price FROM products WHERE category = 'Gaming'";
+  //$result = mysqli_query($conn, $sql);
+
+
+  foreach ($conn->query($sql) as $row){
     echo "<div class='grid-item'> ";
     echo "<a href='product.html?Id=". $row['id'] . "' name='" . $row['name'] .
       "' style='color:black;text-decoration:none;' >";
@@ -25,8 +25,13 @@ if (mysqli_num_rows($result) > 0){
     echo "</a>";
     echo "</div>";
   }
+
+}
+
+catch(PDOException $e){
+  echo "Connection Failed: " .$e->getMessage();
 }
 
 
 
-mysqli_close($conn);
+$conn = null;
