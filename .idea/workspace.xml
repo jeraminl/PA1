@@ -23,10 +23,11 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="094686b9-8b9d-4401-a28b-190d489fa6bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sql/insert.sql" afterDir="false" />
+    <list default="true" id="094686b9-8b9d-4401-a28b-190d489fa6bc" name="Default Changelist" comment="update index page to use PHP and MySQL">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/get_product_gaming.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/get_product_gaming.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/get_product_office.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/get_product_office.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/get_product_professional.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/get_product_professional.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +98,9 @@
       <workItem from="1586883402244" duration="2313000" />
       <workItem from="1586885728034" duration="867000" />
       <workItem from="1588011929242" duration="395000" />
-      <workItem from="1588095656129" duration="4356000" />
+      <workItem from="1588095656129" duration="12568000" />
+      <workItem from="1588178033220" duration="8497000" />
+      <workItem from="1588602208728" duration="3662000" />
     </task>
     <task id="LOCAL-00001" summary="js and html module setup">
       <created>1586795216361</created>
@@ -148,7 +151,28 @@
       <option name="project" value="LOCAL" />
       <updated>1588012138783</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="sql script for product finished">
+      <created>1588103047148</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1588103047148</updated>
+    </task>
+    <task id="LOCAL-00009" summary="update index page to use PHP and MySQL">
+      <created>1588111609425</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1588111609425</updated>
+    </task>
+    <task id="LOCAL-00010" summary="update product info to use PHP and MySQL">
+      <created>1588193801327</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588193801327</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,6 +220,9 @@
     <MESSAGE value="code clean up" />
     <MESSAGE value="php folder" />
     <MESSAGE value="sql folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="sql folder" />
+    <MESSAGE value="sql script for product finished" />
+    <MESSAGE value="update index page to use PHP and MySQL" />
+    <MESSAGE value="update product info to use PHP and MySQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="update product info to use PHP and MySQL" />
   </component>
 </project>
