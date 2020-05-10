@@ -105,3 +105,28 @@ function changeTax() {
   console.log("sending");
   xmlhttp.send();
 }
+
+function checkState() {
+
+  var state = document.getElementById("state").value;
+
+  if ( state == "") {
+    var zip = document.getElementById("zip").value;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+
+      if(this.readyState == 4 && this.status == 200) {
+        document.getElementById("state").innerText=this.responseText;
+      }
+    };
+
+    xmlhttp.open("GET", "./php/get_state.php?zip=" + zip, true);
+    console.log("sending");
+    xmlhttp.send();
+  }
+}
+
+function checkAndSet {
+  checkState();
+  changeTax();
+}

@@ -9,11 +9,11 @@ try{
   $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $sql = "SELECT ZipCode, CombinedRate FROM taxTable WHERE ZipCode = {$para}";
+  $sql = "SELECT State FROM taxTable WHERE ZipCode = {$para}";
 
 
   foreach ($conn->query($sql) as $row){
-    echo "{$row['CombinedRate']}";
+    echo "{$row['State']}";
   }
 }
 catch(PDOException $e){
