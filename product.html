@@ -182,6 +182,7 @@
                   pattern="(\d{5}([\-]\d{4})?)"
                   onblur="this.reportValidity()"
                   required
+                  onchange="changeTax()"
                 /><br /><br />
               </div>
             </div>
@@ -382,6 +383,7 @@
                 <option value="9">9</option>
                 <option value="10">10</option> </select
               ><br /><br />
+              <p>Tax: $<span id="taxPrice"></span></p>
               <p>Shipping: $<span id="shipPrice"></span></p>
               <br /><br />
               <p>Total Price: $<span id="orderTotPrice"></span></p>
