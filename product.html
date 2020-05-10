@@ -120,6 +120,7 @@
               <div class="column-2">
                 <label for="state">State:</label><br />
                 <select id="state" name="state" required>
+                  <option disabled selected value></option>
                   <option value="AL">AL</option>
                   <option value="AK">AK</option>
                   <option value="AZ">AZ</option>
@@ -184,6 +185,7 @@
                   pattern="(\d{5}([\-]\d{4})?)"
                   onblur="this.reportValidity()"
                   required
+                  onchange="checkAndSet()"
                 /><br /><br />
               </div>
             </div>
@@ -384,6 +386,7 @@
                 <option value="9">9</option>
                 <option value="10">10</option> </select
               ><br /><br />
+              <p>Tax Rate: $<span id="taxPrice"></span></p>
               <p>Shipping: $<span id="shipPrice"></span></p>
               <br /><br />
               <p>Total Price: $<span id="orderTotPrice"></span></p>

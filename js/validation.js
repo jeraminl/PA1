@@ -101,20 +101,42 @@ function newShip() {
   var units = document.getElementById("units");
   var newUnits = units.options[units.selectedIndex].value;
 
+  var tax = document.getElementById("taxPrice");
+  var newTax = tax.options[tax.selectedIndex].value
+
+  if (newTax == "") {
+    newTax = 0;
+  }
+  console.log('here');
   document.getElementById("orderTotPrice").innerHTML = (
     parseFloat(document.getElementById("orderPrice").innerHTML) *
-      parseFloat(newUnits) +
-    parseFloat(document.getElementById("shipPrice").innerHTML)
+      parseFloat(newUnits) +  parseFloat(document.getElementById("orderPrice").innerHTML) *
+      parseFloat(newUnits) * parseFloat(newTax) +
+      parseFloat(document.getElementById("shipPrice").innerHTML)
   ).toFixed(2);
 }
 
 function difUnits() {
+  console.log('here');
   var oldUnits = document.getElementById("units");
   var newUnits = oldUnits.options[oldUnits.selectedIndex].value;
 
+  var tax = document.getElementById("taxPrice");
+  var newTax = tax.options[tax.selectedIndex].value
+
+  if (newTax == "") { // if tax rate is empty ( i.e. user has not yet input zipcode, tax rate will be 0 )
+    newTax = 0;
+  }
+  console.log(parseFloat(document.getElementById("orderPrice").innerHTML) *
+    parseFloat(newUnits) + parseFloat(document.getElementById("orderPrice").innerHTML) *
+    parseFloat(newUnits) * parseFloat(newTax) +
+    parseFloat(document.getElementById("shipPrice").innerHTML));
+
+
   document.getElementById("orderTotPrice").innerHTML = (
     parseFloat(document.getElementById("orderPrice").innerHTML) *
-      parseFloat(newUnits) +
-    parseFloat(document.getElementById("shipPrice").innerHTML)
+      parseFloat(newUnits) + parseFloat(document.getElementById("orderPrice").innerHTML) *
+      parseFloat(newUnits) * parseFloat(newTax) +
+      parseFloat(document.getElementById("shipPrice").innerHTML)
   ).toFixed(2);
 }

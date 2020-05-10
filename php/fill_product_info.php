@@ -4,18 +4,15 @@ $dbhost = 'localhost:3306';
 $dbuser = 'root';
 $dbpass = '';
 $dbname = 'store_db';
-$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+try{
+  $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$sql = "SELECT id, name, price, size, switch, description FROM products WHERE id = {$para}";
+  $sql = "SELECT id, name, price, size, switch, description FROM products WHERE id = {$para}";
 
-$result = mysqli_query($conn, $sql);
 
-if (mysqli_num_rows($result) > 0){
-  while($row = mysqli_fetch_assoc($result)){
+  foreach ($conn->query($sql) as $row){
     echo "<a href='index.html'></a>";
     echo    "<h1 id='productName' class='prod-title'></h1>";
     echo    "<div id='image-row' class='image-row'>";
@@ -37,5 +34,11 @@ if (mysqli_num_rows($result) > 0){
     echo      "<li id='size' class='list-items'>Size: {$row['size']}</li>";
     echo      "<li id='key' class='list-items'>Keys:{$row['switch']}</li>";
     echo    "</ul>";
+
   }
 }
+catch(PDOException $e){
+  echo "Connection Failed: " .$e->getMessage();
+}
+$conn = null;
+
