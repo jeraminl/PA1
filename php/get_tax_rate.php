@@ -13,7 +13,7 @@ try{
 
 
   foreach ($conn->query($sql) as $row){
-    echo "<p>Tax: $<span id=\"taxPrice\"> {$row['CombineRate']} </span></p>";
+    echo "{$row['CombinedRate']}";
   }
 }
 catch(PDOException $e){

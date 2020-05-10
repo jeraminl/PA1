@@ -93,11 +93,12 @@ function fillInfo() {
 }
 
 function changeTax() {
+  var zip = document.getElementById("zip").value;
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
 
     if(this.readyState == 4 && this.status == 200) {
-      zip = document.getElementById("zip");
+      document.getElementById("taxPrice").innerText=this.responseText;
     }
   };
   xmlhttp.open("GET", "./php/get_tax_rate.php?zip=" + zip, true);
