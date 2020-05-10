@@ -116,7 +116,7 @@ function checkState() {
     xmlhttp.onreadystatechange = function() {
 
       if(this.readyState == 4 && this.status == 200) {
-        document.getElementById("state").innerText=this.responseText;
+        document.getElementById("state").value=this.responseText;
       }
     };
 
@@ -126,7 +126,7 @@ function checkState() {
   }
 }
 
-function checkAndSet {
+function checkAndSet() {
   checkState();
   changeTax();
 }
