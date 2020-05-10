@@ -56,7 +56,7 @@
       </div>
 
       <!-- Order Form -->
-      <form name="orderForm" class="order-form" onsubmit="return validate()">
+      <form action="confirmation.php" method="post" name="orderForm" class="order-form">
         <h2 class="prod-title">Order Form</h2>
         <div class="row">
           <div class="column">
@@ -294,7 +294,7 @@
             <div class="row">
               <div class="column-2">
                 <label for="billingState">State:</label><br />
-                <select id="billingState" name="state" required>
+                <select id="billingState" name="billingState" required>
                   <option value="AL">AL</option>
                   <option value="AK">AK</option>
                   <option value="AZ">AZ</option>
