@@ -85,6 +85,14 @@ function fillInfo() {
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("productInfo").innerHTML = this.responseText;
+      document.getElementById("shipPrice").innerHTML = 10;
+      document.getElementById("orderProdID").innerHTML = document.getElementById("productID").innerText;
+      document.getElementById("orderPrice").innerHTML = document.getElementById("price").innerText;
+      document.getElementById("orderTotPrice").innerHTML =
+        parseFloat(document.getElementById("price")) *
+        parseInt(document.getElementById("units")) +
+        parseInt(document.getElementById("shipPrice"));
+
     }
   };
   xmlhttp.open("GET", "./php/fill_product_info.php?Id=" + productID, true);

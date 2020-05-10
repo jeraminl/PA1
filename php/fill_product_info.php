@@ -29,9 +29,9 @@ if (mysqli_num_rows($result) > 0){
 
     echo    "</div>";
 
-    echo    "<p id='productID'>Product ID: {$row['id']}</p>";
+    echo    "<p> Product ID:<span id='productID'>{$row['id']} </span></p>";
     echo    "<p id='desc' class='prod-details'>Descriptions: {$row['description']}</p>";
-    echo    "<p id='price' class='price'>Price: {$row['price']} </p>";
+    echo    "<p id='price' class='price'>{$row['price']} </p>";
     echo    "<p>Additional Details</p>";
     echo    "<ul>";
     echo      "<li id='size' class='list-items'>Size: {$row['size']}</li>";
