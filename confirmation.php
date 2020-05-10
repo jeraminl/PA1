@@ -36,7 +36,8 @@
         $shipping = $_POST["shipMeth"];
         $numUnits = $_POST["units"];
         $shipprice = 0;
-        
+        $price = $_POST["test"];
+        $total = $price * $numUnits;
         ?>
     </head>
 
@@ -94,6 +95,7 @@
             $shipprice = 0;
             echo "6-days ground";
         }
+        $total = $total + $shipprice;
         ?><br><br>
 
         Billing Information<br>
@@ -108,6 +110,7 @@
         Costs <br>
         Units: <?php echo $numUnits; ?><br>
         Shipping: $<?php echo $shipprice; ?><br>
+        Total: $<?php echo $total; ?><br>
     </p>
     </div>
 
@@ -122,10 +125,10 @@
       die("Connection failed: " . $conn->connect_error);
     }
     $sql = "INSERT INTO orders (firstName, lastName, email, phone, address, city, 
-            state, zip, ship, units, shipping, card_number)
+            state, zip, ship, units, shipping, total, card_number)
             VALUES('$first_name', '$last_name', '$email', '$phone', '$address', 
             '$city', '$state', '$zip', '$shipping', '$numUnits', '$shipprice', 
-            '$ccNum')";
+            '$total', '$ccNum')";
     mysqli_query($conn, $sql);
 
     mysqli_close($conn);
