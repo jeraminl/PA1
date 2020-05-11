@@ -1,13 +1,8 @@
 <?php
 $para = $_GET['Id'];
-$dbhost = 'localhost:3306';
-$dbuser = 'root';
-$dbpass = '';
-$dbname = 'store_db';
-
+require_once "pdo.php";
 try{
-  $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
   $sql = "SELECT id, name, price, size, switch, description FROM products WHERE id = {$para}";
 
