@@ -1,5 +1,5 @@
-    <html>
-    <html lang="en">
+
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <title> Confirmation Page </title>
@@ -7,7 +7,6 @@
         <link rel="stylesheet" type="text/css" href="css/header.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
-        <script src="js/confirmation.js"> </script>
         <style>
         em {
           font-family: Arial, Helvetica, sans-serif;
@@ -25,11 +24,12 @@
         try {
           $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
           $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $stmt = $conn->prepare("INSERT INTO orders (firstName, lastName, email, phone, address, city, 
-            state, zip, ship, units, shipping, total, card_number)
-            VALUES(:first_name, :last_name, :email, :phone, :address, 
-            :city, :state, :zip, :shipping, :numUnits, :shipprice, 
-            :total, :ccNum)");
+          $stmt = $conn->prepare(
+            "INSERT INTO orders (firstName, lastName, email, phone, address, city,
+            state, zip, productID, ship, units, total)
+            VALUES(:first_name, :last_name, :email, :phone, :address,
+            :city, :state, :zip, :prodID, :shipping, :numUnits,
+            :total)");
 
           $stmt->bindParam(':first_name', $first_name);
           $stmt->bindParam(':last_name', $last_name);
@@ -39,11 +39,10 @@
           $stmt->bindParam(':city', $city);
           $stmt->bindParam(':state', $state);
           $stmt->bindParam(':zip', $zip);
+          $stmt->bindParam(':prodID', $prodID);
           $stmt->bindParam(':shipping', $shipping);
           $stmt->bindParam(':numUnits', $numUnits);
-          $stmt->bindParam(':shipprice', $shipprice);
           $stmt->bindParam(':total', $total);
-          $stmt->bindParam(':ccNum', $ccNum);
 
           $first_name = "";
           $last_name = "";
@@ -62,12 +61,38 @@
           $billing_state = "";
           $billing_zip = "";
           $ccNum = $_POST["ccNum"];
-
-          $shipping = $_POST["shipMeth"];
+          $prodID = $_POST["prodID"];
+          $shipping = "";
           $numUnits = $_POST["units"];
-          $shipprice = $_POST["finalShip"];
+          $shipPrice = "";
           $price = $_POST["test"];
-          $total = $_POST['finalPrice'];
+          $total = "";
+
+
+          if (empty($_POST['shipMeth'])){
+            echo  'shipping method needs to be provided. <br/>';
+            if ($shipping == "1"){
+              $shipPrice = 10;
+            }
+            if ($shipping == "2"){
+              $shipPrice = 5;
+            }
+            if ($shipping == "6"){
+              $shipPrice = 0;
+            }
+          } else {
+            $shipping = test_input($_POST['shipMeth']);
+            if ($shipping == "1"){
+              $shipPrice = 10;
+            }
+            if ($shipping == "2"){
+              $shipPrice = 5;
+            }
+            if ($shipping == "6"){
+              $shipPrice = 0;
+            }
+          }
+
 
           if (empty($_POST['firstName'])){
             echo  'First Name needs to be provided. <br/>';
@@ -122,6 +147,12 @@
             $zip = test_input($_POST['zip']);
           }
 
+          if (empty($_POST['finalPrice'])){
+            echo  'total price needs to be provided. <br/>';
+          } else {
+            $total = test_input($_POST['finalPrice']);
+          }
+
           if (empty($_POST['billingFirstName'])){
             echo  'First Name needs to be provided. <br/>';
           } else {
@@ -164,18 +195,11 @@
           } else {
             $ccNum = test_input($_POST['ccNum']);
           }
-
-
-
-
           $stmt->execute();
         } catch (PDOException $e) {
           echo "Connection Failed: " . $e->getMessage();
         }
         $conn = null;
-
-
-
 
         function test_input($data) {
           $data = trim($data);
@@ -257,8 +281,5 @@
         Total: $<?php echo $total; ?><br>
     </p>
     </div>
-
-
-    ?>
 </body>
 </html>

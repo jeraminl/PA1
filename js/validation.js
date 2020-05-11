@@ -24,7 +24,7 @@ function newShip() {
     document.getElementById("shipPrice").innerHTML = 0;
   }
 
-  var price = parseFloat(document.getElementById('orderPrice').innerHTML);
+  var price = parseFloat(document.getElementById("orderPrice").innerHTML);
   var oldUnits = document.getElementById("units");
   var newUnits = parseFloat(oldUnits.value);
   var ship = parseFloat(document.getElementById("shipPrice").innerHTML);
@@ -35,13 +35,19 @@ function newShip() {
   if (newTax == "") {
     newTax = 0;
   }
-  document.getElementById("orderTotPrice").innerHTML = (
-    (price * newUnits + price * newUnits * newTax + ship).toFixed(2));
-  document.getElementById("finalShip").value=ship;
+  var finalPrice = (
+    price * newUnits +
+    price * newUnits * newTax +
+    ship
+  ).toFixed(2);
+
+  document.getElementById("finalShip").value = ship;
+  document.getElementById("orderTotPrice").innerHTML = finalPrice;
+  document.getElementById("finalPrice").value = finalPrice;
 }
 
 function difUnits() {
-  var price = parseFloat(document.getElementById('orderPrice').innerHTML);
+  var price = parseFloat(document.getElementById("orderPrice").innerHTML);
   var oldUnits = document.getElementById("units");
   var newUnits = parseFloat(oldUnits.value);
   var ship = parseFloat(document.getElementById("shipPrice").innerHTML);
@@ -50,12 +56,16 @@ function difUnits() {
   var newTax = parseFloat(tax.innerHTML);
   console.log(newTax);
 
-  if (newTax == "") { // if tax rate is empty ( i.e. user has not yet input zipcode, tax rate will be 0 )
+  if (newTax == "") {
+    // if tax rate is empty ( i.e. user has not yet input zipcode, tax rate will be 0 )
     newTax = 0;
   }
-  var finalPrice = (price * newUnits + price * newUnits * newTax + ship).toFixed(2);
-  console.log((price * newUnits + price * newUnits * newTax + ship).toFixed(2));
-
+  var finalPrice = (
+    price * newUnits +
+    price * newUnits * newTax +
+    ship
+  ).toFixed(2);
   document.getElementById("orderTotPrice").innerHTML = finalPrice;
-  document.getElementById("finalPrice").value=finalPrice
+  document.getElementById("finalPrice").value = finalPrice;
 }
+
