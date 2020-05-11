@@ -1,7 +1,7 @@
     <html>
     <html lang="en">
     <head>
-        <meta charset="UTF-8" />  
+        <meta charset="UTF-8" />
         <title> Confirmation Page </title>
         <link rel="stylesheet" type="text/css" href="css/product.css" />
         <link rel="stylesheet" type="text/css" href="css/header.css" />
@@ -15,33 +15,178 @@
         }
         </style>
         <?php
-        $first_name = $_POST["firstName"];
-        $last_name = $_POST["lastName"];
-        $email = $_POST["email"];
-        $phone = $_POST["phone"];
 
-        $address = $_POST["address"];
-        $city = $_POST["city"];
-        $state = $_POST["state"];
-        $zip = $_POST["zip"];
 
-        $billing_first = $_POST["billingFirstName"];
-        $billing_last = $_POST["billingLastName"];
-        $billing_address = $_POST["billingAddress"];
-        $billing_city = $_POST["billingCity"];
-        $billing_state = $_POST["billingState"];
-        $billing_zip = $_POST["billingZip"];
-        $ccNum = $_POST["ccNum"];
+        $dbhost = 'localhost:3306';
+        $dbuser = 'root';
+        $dbpass = '';
+        $dbname = 'store_db';
 
-        $shipping = $_POST["shipMeth"];
-        $numUnits = $_POST["units"];
-        $shipprice = 0;
-        $price = $_POST["test"];
-        $total = $price * $numUnits;
+        try {
+          $conn = new PDO("mysql:host=$dbhost;dbname=$dbname", $dbuser, $dbpass);
+          $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          $stmt = $conn->prepare("INSERT INTO orders (firstName, lastName, email, phone, address, city, 
+            state, zip, ship, units, shipping, total, card_number)
+            VALUES(:first_name, :last_name, :email, :phone, :address, 
+            :city, :state, :zip, :shipping, :numUnits, :shipprice, 
+            :total, :ccNum)");
+
+          $stmt->bindParam(':first_name', $first_name);
+          $stmt->bindParam(':last_name', $last_name);
+          $stmt->bindParam(':email', $email);
+          $stmt->bindParam(':phone', $phone);
+          $stmt->bindParam(':address', $address);
+          $stmt->bindParam(':city', $city);
+          $stmt->bindParam(':state', $state);
+          $stmt->bindParam(':zip', $zip);
+          $stmt->bindParam(':shipping', $shipping);
+          $stmt->bindParam(':numUnits', $numUnits);
+          $stmt->bindParam(':shipprice', $shipprice);
+          $stmt->bindParam(':total', $total);
+          $stmt->bindParam(':ccNum', $ccNum);
+
+          $first_name = "";
+          $last_name = "";
+          $email = "";
+          $phone = "";
+
+          $address = "";
+          $city = "";
+          $state = "";
+          $zip = "";
+
+          $billing_first = "";
+          $billing_last = "";
+          $billing_address = "";
+          $billing_city = "";
+          $billing_state = "";
+          $billing_zip = "";
+          $ccNum = $_POST["ccNum"];
+
+          $shipping = $_POST["shipMeth"];
+          $numUnits = $_POST["units"];
+          $shipprice = 0;
+          $price = $_POST["test"];
+          $total = $price * $numUnits;
+
+          if (empty($_POST['firstName'])){
+            echo  'First Name needs to be provided. <br/>';
+          } else {
+            $first_name = test_input($_POST['firstName']);
+          }
+
+
+          if (empty($_POST['lastName'])){
+            echo  'Last Name needs to be provided. <br/>';
+          } else {
+            $last_name = test_input($_POST['lastName']);
+          }
+
+
+          if(empty($_POST['email'])){
+            echo 'An email needs to be provided. <br/>';
+          } else {
+            $email = $_POST['email'];
+            if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+              echo 'A valid email needs to be provided. <br/>';
+            }
+          }
+
+          if (empty($_POST['phone'])){
+            echo  'Phone needs to be provided. <br/>';
+          } else {
+            $phone = test_input($_POST['phone']);
+          }
+
+          if (empty($_POST['address'])){
+            echo  'city needs to be provided. <br/>';
+          } else {
+            $address = test_input($_POST['address']);
+          }
+
+          if (empty($_POST['city'])){
+            echo  'city needs to be provided. <br/>';
+          } else {
+            $city = test_input($_POST['city']);
+          }
+
+          if (empty($_POST['state'])){
+            echo  'Phone needs to be provided. <br/>';
+          } else {
+            $state = test_input($_POST['state']);
+          }
+
+          if (empty($_POST['zip'])){
+            echo  'zip needs to be provided. <br/>';
+          } else {
+            $zip = test_input($_POST['zip']);
+          }
+
+          if (empty($_POST['billingFirstName'])){
+            echo  'First Name needs to be provided. <br/>';
+          } else {
+            $billing_first = test_input($_POST['billingFirstName']);
+          }
+
+          if (empty($_POST['billingLastName'])){
+            echo  'Last Name needs to be provided. <br/>';
+          } else {
+            $billing_last = test_input($_POST['billingLastName']);
+          }
+
+          if (empty($_POST['billingAddress'])){
+            echo  'Billing Address needs to be provided. <br/>';
+          } else {
+            $billing_address = test_input($_POST['billingAddress']);
+          }
+
+          if (empty($_POST['billingCity'])){
+            echo  'city needs to be provided. <br/>';
+          } else {
+            $billing_city = test_input($_POST['billingCity']);
+          }
+
+          if (empty($_POST['billingState'])){
+            echo  'state needs to be provided. <br/>';
+          } else {
+            $billing_state = test_input($_POST['billingState']);
+          }
+
+
+          if (empty($_POST['billingZip'])){
+            echo  'zip needs to be provided. <br/>';
+          } else {
+            $billing_zip = test_input($_POST['billingZip']);
+          }
+
+          if (empty($_POST["ccNum"])){
+            echo  'cc needs to be provided. <br/>';
+          } else {
+            $ccNum = test_input($_POST['ccNum']);
+          }
+
+
+
+
+          $stmt->execute();
+        } catch (PDOException $e) {
+          echo "Connection Failed: " . $e->getMessage();
+        }
+        $conn = null;
+
+
+
+
+        function test_input($data) {
+          $data = trim($data);
+          $data = stripslashes($data);
+          $data = htmlspecialchars($data);
+          return $data;
+        }
         ?>
     </head>
 
-    <body onload="load()">
+    <body>
     <div class="flex-container sansserif">
       <div class="website-header">
         <ul>
@@ -82,7 +227,7 @@
         State: <?php echo $state; ?><br>
         Zipcode: <?php echo $zip; ?><br>
 
-        Shipping method: <?php 
+        Shipping method: <?php
         if ($shipping == "1"){
             $shipprice = 10;
             echo "overnight";
@@ -99,7 +244,7 @@
         ?><br><br>
 
         Billing Information<br>
-        Name: <?php echo $billing_first;?> 
+        Name: <?php echo $billing_first;?>
             <?php echo $billing_last; ?><br>
         Address: <?php echo $billing_address; ?><br>
         City: <?php echo $billing_city; ?><br>
@@ -114,24 +259,7 @@
     </p>
     </div>
 
-    <?php
-    $dbhost = 'localhost:3306';
-    $dbuser = 'root';
-    $dbpass = '';
-    $dbname = 'store_db';
-    $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-    
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-    $sql = "INSERT INTO orders (firstName, lastName, email, phone, address, city, 
-            state, zip, ship, units, shipping, total, card_number)
-            VALUES('$first_name', '$last_name', '$email', '$phone', '$address', 
-            '$city', '$state', '$zip', '$shipping', '$numUnits', '$shipprice', 
-            '$total', '$ccNum')";
-    mysqli_query($conn, $sql);
 
-    mysqli_close($conn);
     ?>
 </body>
 </html>
