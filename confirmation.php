@@ -65,9 +65,9 @@
 
           $shipping = $_POST["shipMeth"];
           $numUnits = $_POST["units"];
-          $shipprice = 0;
+          $shipprice = $_POST["finalShip"];
           $price = $_POST["test"];
-          $total = $price * $numUnits;
+          $total = $_POST['finalPrice'];
 
           if (empty($_POST['firstName'])){
             echo  'First Name needs to be provided. <br/>';
@@ -240,7 +240,6 @@
             $shipprice = 0;
             echo "6-days ground";
         }
-        $total = $total + $shipprice;
         ?><br><br>
 
         Billing Information<br>

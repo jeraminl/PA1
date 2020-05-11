@@ -191,7 +191,8 @@
             </div>
 
             <label for="shipMeth">Shipping Method:</label><br />
-            <select id="shipMeth" name="shipMeth" onchange="newShip()" required>
+            <select id="shipMeth" name="shipMeth" onchange="newShip()" onblur="newShip()" required>
+              <option disabled selected value> -- select an option -- </option>
               <option value="1">overnight</option>
               <option value="2">2-days expedited</option>
               <option value="6">6-days ground</option> </select
@@ -375,6 +376,7 @@
               <p class="cart">Price: $<span id="orderPrice"></span></p>
               <label for="units">Number of Units: </label>
               <select id="units" name="units" onchange="difUnits()">
+                <option disabled selected value> -- select an option -- </option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -392,6 +394,8 @@
               <p>Total Price: $<span id="orderTotPrice"></span></p>
               <br />
               <br />
+              <input type="hidden" name="finalShip" id="finalShip" value=""/>
+              <input type="hidden" name="finalPrice" id="finalPrice" value=""/>
               <input type="submit" value="Submit Order" />
             </div>
           </div>
